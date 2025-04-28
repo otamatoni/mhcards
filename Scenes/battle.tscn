@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbc45rpsooh3a"]
+
+[ext_resource type="Script" uid="uid://d1nhtnr2sf7ti" path="res://Scripts/win.gd" id="1_oxf17"]
+[ext_resource type="Script" uid="uid://u1tokpl701d2" path="res://Scripts/lose.gd" id="2_1ruyk"]
+
+[node name="Battle" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Win" type="Button" parent="CanvasLayer"]
+offset_left = 320.0
+offset_top = 168.0
+offset_right = 415.0
+offset_bottom = 250.0
+text = "win"
+script = ExtResource("1_oxf17")
+
+[node name="Lose" type="Button" parent="CanvasLayer"]
+offset_left = 479.0
+offset_top = 172.0
+offset_right = 581.0
+offset_bottom = 251.0
+text = "lose"
+script = ExtResource("2_1ruyk")
+
+[connection signal="button_up" from="CanvasLayer/Win" to="CanvasLayer/Win" method="_on_button_up"]
+[connection signal="button_up" from="CanvasLayer/Lose" to="CanvasLayer/Lose" method="_on_button_up"]
