@@ -1,16 +1,37 @@
-extends Node2D
+extends Node
 
-@export var nodes_per_layer = 5 # width
-@export var num_layers = 7 # height
 @export var num_node_types = 8 
 @export var max_trials = 2
 @export var num_starting_nodes = 2
+@onready var current_scene = $Map
+
+# needed for Map scene
+@export var num_layers = 7 # height
+@export var nodes_per_layer = 5 # width
 var map = []
 var paths = {}
 var map_gui_positions = []
-var square_size = 30
 
 func _ready() -> void:
+	generate_map()
+	load_map()
+	
+# handles when a node is pressed
+func handle_node_is_up(node_id) -> void:
+	print('scene switcher got node_is_up with node id ', node_id)
+	var next_scene = preload("res://Scenes/battle.tscn").instantiate()
+	add_child(next_scene)
+	var win_button = next_scene.get_node("CanvasLayer/Win")
+	win_button.button_up.connect(handle_won)
+	current_scene.queue_free()
+	current_scene = next_scene
+
+# loads back map when won
+func handle_won() -> void:
+	load_map()
+	
+# logic for generating initial map
+func generate_map() -> void:
 	# generate grid
 	var row
 	for i in range(num_layers):
@@ -32,8 +53,6 @@ func _ready() -> void:
 	for s in starting_nodes:
 		map[s[0]][s[1]][1] = 1
 	
-	print('full map: %s' % var_to_str(map))
-	print('starting nodes: %s' % var_to_str(starting_nodes))
 	
 	# start pathing
 	var frontier = []
@@ -80,63 +99,23 @@ func _ready() -> void:
 			for node in paths[current_node_str]:
 				if not frontier.has(node):
 					frontier.append(node)
-					
-			
-	print("paths: %s" % var_to_str(paths))
-	print('selected map: %s' % var_to_str(map))
+	
+# loap map into scene
+func load_map() -> void:
+	# pre load scene
+	var next_scene = preload("res://Scenes/map.tscn").instantiate()
+	
+	# transfer params
+	next_scene.nodes_per_layer = nodes_per_layer
+	next_scene.num_layers = num_layers
+	next_scene.map = map
+	next_scene.paths = paths
+	next_scene.map_gui_positions = map_gui_positions
+	
+	# add child to SceneSwitcher
+	add_child(next_scene)
+	current_scene.queue_free()
+	current_scene = next_scene
+	current_scene.connect('node_is_up', handle_node_is_up)
 	
 	
-	# draw on gui
-	for i in range(num_layers):
-		row = []
-		row.resize(nodes_per_layer)
-		row.fill(Vector2(0, 0))
-		map_gui_positions.append(row)
-	
-
-	var disabled_color = StyleBoxFlat.new()
-	disabled_color.bg_color = Color(0.5, 0.5, 0.5)
-	var normal_color = StyleBoxFlat.new()
-	normal_color.bg_color = Color(1, 1, 1)
-	var hover_color = StyleBoxFlat.new()
-	hover_color.bg_color = Color(0, 1, 0)
-	var pressed_color = StyleBoxFlat.new()
-	pressed_color.bg_color = Color(1, 1, 0)
-
-	for y in range(num_layers):
-		for x in range(nodes_per_layer):
-			if map[y][x][1] == 1:
-				var node = Button.new()
-				
-				node.add_theme_stylebox_override('disabled', disabled_color)
-				node.add_theme_stylebox_override('normal', normal_color)
-				node.add_theme_stylebox_override('hover', hover_color)
-				node.add_theme_stylebox_override('pressed', pressed_color)
-				node.button_up.connect(node_up)
-
-				
-				node.size = Vector2(square_size, square_size)
-				node.disabled = false
-				node.focus_mode = Control.FOCUS_NONE
-				add_child(node)
-				node.position = Vector2((x+2) * square_size*2, (y+1) * square_size*2) 
-				map_gui_positions[y][x] = node.position
-		
-	
-
-func _draw() -> void:
-	var pos_from
-	for pos_from_str in paths.keys():
-		pos_from = JSON.parse_string(pos_from_str)
-		pos_from = map_gui_positions[pos_from[0]][pos_from[1]]
-		pos_from[0] += square_size / 2
-		pos_from[1] += square_size / 2
-		for pos_to in paths[pos_from_str]:
-			pos_to = map_gui_positions[pos_to[0]][pos_to[1]]
-			pos_to[0] += square_size / 2
-			pos_to[1] += square_size / 2
-			draw_line(pos_from, pos_to, Color(1, 1, 1), 2)
-			print('from %s to %s' % [pos_from, pos_to])
-			
-func node_up() -> void:
-	get_tree().change_scene_to_file("res://Scenes/battle.tscn")

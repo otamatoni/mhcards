@@ -23,5 +23,4 @@ offset_bottom = 251.0
 text = "lose"
 script = ExtResource("2_1ruyk")
 
-[connection signal="button_up" from="CanvasLayer/Win" to="CanvasLayer/Win" method="_on_button_up"]
 [connection signal="button_up" from="CanvasLayer/Lose" to="CanvasLayer/Lose" method="_on_button_up"]

@@ -1,17 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://bipyx6d4bd1dk"]
 
-[ext_resource type="Script" uid="uid://dqbvtpuponlfh" path="res://Scripts/game_controller.gd" id="1_26yhd"]
+[ext_resource type="Script" uid="uid://dqbvtpuponlfh" path="res://Scripts/map_drawer.gd" id="1_26yhd"]
 [ext_resource type="Script" uid="uid://bjk8mhpnrki5w" path="res://Scripts/reset_button.gd" id="1_ci6au"]
 
-[node name="Control" type="Control"]
+[node name="Map" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="GameController" type="Node2D" parent="."]
 script = ExtResource("1_26yhd")
 
 [node name="ResetButton" type="Button" parent="."]
