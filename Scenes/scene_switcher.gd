@@ -4,21 +4,22 @@ extends Node
 @export var max_trials = 2
 @export var num_starting_nodes = 2
 @onready var current_scene = $Map
+var final_nodes = []
 
 # needed for Map scene
 @export var num_layers = 7 # height
 @export var nodes_per_layer = 5 # width
 var map = []
 var paths = {}
-var map_gui_positions = []
 
 func _ready() -> void:
 	generate_map()
 	load_map()
 	
-# handles when a node is pressed
-func handle_node_is_up(node_id) -> void:
-	print('scene switcher got node_is_up with node id ', node_id)
+# handles when a node is pressed, switch to battle scene
+func handle_node_is_up(node_id, node_position) -> void:
+	print('scene switcher got node id ', node_id, ' at pos ', node_position)
+	update_map(node_position)
 	var next_scene = preload("res://Scenes/battle.tscn").instantiate()
 	add_child(next_scene)
 	var win_button = next_scene.get_node("CanvasLayer/Win")
@@ -51,8 +52,7 @@ func generate_map() -> void:
 		starting_nodes.append(temp.pop_at(index))
 	starting_nodes.sort()
 	for s in starting_nodes:
-		map[s[0]][s[1]][1] = 1
-	
+		map[s[0]][s[1]][1] = 3
 	
 	# start pathing
 	var frontier = []
@@ -65,7 +65,7 @@ func generate_map() -> void:
 	var current_layer = 0
 	frontier.append_array(starting_nodes)
 	
-	# reverse BFS somewhat
+	# reverse A* somewhat
 	while not frontier.is_empty():
 		possible_nodes.clear()
 		current_node = frontier.pop_front()
@@ -99,6 +99,23 @@ func generate_map() -> void:
 			for node in paths[current_node_str]:
 				if not frontier.has(node):
 					frontier.append(node)
+					
+		# add final pre-boss nodes to final_nodes
+		else:
+			for node in paths[current_node_str]:
+				if not final_nodes.has(node):
+					final_nodes.append(node)
+					
+	# append boss node
+	row = []
+	row.resize(nodes_per_layer)
+	row.fill(Vector2(0, 0))
+	map.append(row)
+	map[num_layers][0] = Vector2(-1, 1)
+	for n in final_nodes:
+		paths[var_to_str(n)] = [[num_layers, 0]]
+	num_layers += 1
+		
 	
 # loap map into scene
 func load_map() -> void:
@@ -110,7 +127,6 @@ func load_map() -> void:
 	next_scene.num_layers = num_layers
 	next_scene.map = map
 	next_scene.paths = paths
-	next_scene.map_gui_positions = map_gui_positions
 	
 	# add child to SceneSwitcher
 	add_child(next_scene)
@@ -118,4 +134,22 @@ func load_map() -> void:
 	current_scene = next_scene
 	current_scene.connect('node_is_up', handle_node_is_up)
 	
+# update map after node clicked
+func update_map(node_position) -> void:
+	# marking past nodes
+	for i in nodes_per_layer:
+		# nodes in the same layer
+		if map[node_position[0]][i][1] != 0:
+			map[node_position[0]][i][1] = 2
+		# unreachable nodes in the next layer
+		if node_position[0]+1 < num_layers and map[node_position[0]+1][i][1] != 0:
+			map[node_position[0]+1][i][1] = 2
 	
+	# mark the selected node as previous selected 
+	map[node_position[0]][node_position[1]][1] = 4	
+	
+	# mark reachable nodes as selectable
+	if paths.has(var_to_str(node_position)):
+		for n in paths[var_to_str(node_position)]:
+			map[n[0]][n[1]][1] = 3
+		

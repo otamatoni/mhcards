@@ -23,4 +23,12 @@ offset_bottom = 251.0
 text = "lose"
 script = ExtResource("2_1ruyk")
 
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 341.0
+offset_top = 95.0
+offset_right = 489.0
+offset_bottom = 118.0
+scale = Vector2(1.535, 1.535)
+text = "fight is happening!!"
+
 [connection signal="button_up" from="CanvasLayer/Lose" to="CanvasLayer/Lose" method="_on_button_up"]

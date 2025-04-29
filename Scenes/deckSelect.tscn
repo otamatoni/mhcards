@@ -40,5 +40,14 @@ focus_mode = 0
 text = "back"
 script = ExtResource("2_euotc")
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 83.0
+offset_right = 528.0
+offset_bottom = 106.0
+scale = Vector2(1.615, 1.615)
+text = "choose a starting deck"
+
 [connection signal="button_up" from="GSButton" to="GSButton" method="_on_button_up"]
 [connection signal="button_up" from="BackButton" to="BackButton" method="_on_button_up"]
