@@ -9,23 +9,65 @@ var final_nodes = []
 # needed for Map scene
 @export var num_layers = 7 # height
 @export var nodes_per_layer = 5 # width
-var map = []
+var map = [] # 3D arr, [x][y][Vector2(event type, node status)]
 var paths = {}
+enum events {SMALL_MON, BIG_MON, CAMP, EXPE, SMITHY, CHEF}
 
 func _ready() -> void:
 	generate_map()
 	load_map()
+	print(map)
 	
 # handles when a node is pressed, switch to battle scene
 func handle_node_is_up(node_id, node_position) -> void:
 	print('scene switcher got node id ', node_id, ' at pos ', node_position)
 	update_map(node_position)
-	var next_scene = preload("res://Scenes/battle.tscn").instantiate()
-	add_child(next_scene)
-	var win_button = next_scene.get_node("CanvasLayer/Win")
-	win_button.button_up.connect(handle_won)
-	current_scene.queue_free()
-	current_scene = next_scene
+	var next_scene
+	var win_button
+	
+	match node_id:
+		events.SMALL_MON:
+			next_scene = preload("res://Scenes/battle.tscn").instantiate()
+			add_child(next_scene)
+			win_button = next_scene.get_node("CanvasLayer/Win")
+			win_button.button_up.connect(handle_won)
+			current_scene.queue_free()
+			current_scene = next_scene
+		events.BIG_MON:
+			next_scene = preload("res://Scenes/battle.tscn").instantiate()
+			add_child(next_scene)
+			win_button = next_scene.get_node("CanvasLayer/Win")
+			win_button.button_up.connect(handle_won)
+			current_scene.queue_free()
+			current_scene = next_scene
+		events.CAMP:
+			next_scene = preload("res://Scenes/camp.tscn").instantiate()
+			add_child(next_scene)
+			win_button = next_scene.get_node("Back")
+			win_button.button_up.connect(handle_won)
+			current_scene.queue_free()
+			current_scene = next_scene
+		events.EXPE:
+			next_scene = preload("res://Scenes/expedition.tscn").instantiate()
+			add_child(next_scene)
+			win_button = next_scene.get_node("Back")
+			win_button.button_up.connect(handle_won)
+			current_scene.queue_free()
+			current_scene = next_scene
+		events.SMITHY:
+			next_scene = preload("res://Scenes/smithy.tscn").instantiate()
+			add_child(next_scene)
+			win_button = next_scene.get_node("Back")
+			win_button.button_up.connect(handle_won)
+			current_scene.queue_free()
+			current_scene = next_scene
+		events.CHEF:
+			next_scene = preload("res://Scenes/chef.tscn").instantiate()
+			add_child(next_scene)
+			win_button = next_scene.get_node("Back")
+			win_button.button_up.connect(handle_won)
+			current_scene.queue_free()
+			current_scene = next_scene
 
 # loads back map when won
 func handle_won() -> void:
@@ -38,7 +80,7 @@ func generate_map() -> void:
 	for i in range(num_layers):
 		row = []
 		for j in range(nodes_per_layer):
-			row.append([randi() % num_node_types, 0])
+			row.append([randi() % events.size(), 0])
 		map.append(row)
 	
 	# generate starting nodes
@@ -135,6 +177,7 @@ func load_map() -> void:
 	current_scene.connect('node_is_up', handle_node_is_up)
 	
 # update map after node clicked
+# 0 = invalid node, 1 = future node, 2 = past node, 3 = selectable, 4 = previous selected
 func update_map(node_position) -> void:
 	# marking past nodes
 	for i in nodes_per_layer:

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cbaekbyhkwriy"]
+
+[node name="Expedition" type="Control" unique_id=53344513]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=830472214]
+layout_mode = 0
+offset_left = 449.0
+offset_top = 114.0
+offset_right = 631.0
+offset_bottom = 181.0
+theme_override_font_sizes/font_size = 48
+text = "expedition"
+
+[node name="Back" type="Button" parent="." unique_id=1274175849]
+layout_mode = 0
+offset_left = 489.0
+offset_top = 508.0
+offset_right = 570.0
+offset_bottom = 561.0
+theme_override_font_sizes/font_size = 32
+text = "back"
