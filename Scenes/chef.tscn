@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://tgexw4xx5ebl"]
 
-[ext_resource type="Script" uid="uid://bth0jy7adcxd" path="res://Scenes/chef.gd" id="1_sqin4"]
+[ext_resource type="Script" uid="uid://bth0jy7adcxd" path="res://Scripts/chef.gd" id="1_sqin4"]
 
 [node name="Chef" type="Control" unique_id=53344513 node_paths=PackedStringArray("option1", "option2", "option3")]
 layout_mode = 3

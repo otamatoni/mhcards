@@ -24,13 +24,14 @@ func handle_node_is_up(node_id, node_position) -> void:
 	update_map(node_position)
 	var next_scene
 	var win_button
-	
+	var main_node
 	match node_id:
 		events.SMALL_MON:
 			next_scene = preload("res://Scenes/battle.tscn").instantiate()
 			add_child(next_scene)
 			win_button = next_scene.get_node("CanvasLayer/Win")
 			win_button.button_up.connect(handle_won)
+			next_scene.set_battle_type('small')
 			current_scene.queue_free()
 			current_scene = next_scene
 		events.BIG_MON:
@@ -38,6 +39,7 @@ func handle_node_is_up(node_id, node_position) -> void:
 			add_child(next_scene)
 			win_button = next_scene.get_node("CanvasLayer/Win")
 			win_button.button_up.connect(handle_won)
+			next_scene.set_battle_type('big')
 			current_scene.queue_free()
 			current_scene = next_scene
 		events.CAMP:
@@ -68,6 +70,15 @@ func handle_node_is_up(node_id, node_position) -> void:
 			win_button.button_up.connect(handle_won)
 			current_scene.queue_free()
 			current_scene = next_scene
+		_:
+			next_scene = preload("res://Scenes/battle.tscn").instantiate()
+			add_child(next_scene)
+			win_button = next_scene.get_node("CanvasLayer/Win")
+			win_button.button_up.connect(handle_won)
+			next_scene.set_battle_type('elder')
+			current_scene.queue_free()
+			current_scene = next_scene
+			
 
 # loads back map when won
 func handle_won() -> void:

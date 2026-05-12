@@ -1,34 +1,41 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbc45rpsooh3a"]
+[gd_scene format=3 uid="uid://cbc45rpsooh3a"]
 
+[ext_resource type="Script" uid="uid://4vu8f8bp3oxb" path="res://Scripts/battle.gd" id="1_1ruyk"]
 [ext_resource type="Script" uid="uid://d1nhtnr2sf7ti" path="res://Scripts/win.gd" id="1_oxf17"]
 [ext_resource type="Script" uid="uid://u1tokpl701d2" path="res://Scripts/lose.gd" id="2_1ruyk"]
 
-[node name="Battle" type="Node2D"]
+[node name="Battle" type="Node2D" unique_id=1537330111 node_paths=PackedStringArray("text", "monster")]
+script = ExtResource("1_1ruyk")
+text = NodePath("CanvasLayer/Label")
+monster = NodePath("Monster")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2010405012]
 
-[node name="Win" type="Button" parent="CanvasLayer"]
-offset_left = 320.0
-offset_top = 168.0
-offset_right = 415.0
-offset_bottom = 250.0
+[node name="Win" type="Button" parent="CanvasLayer" unique_id=365672062]
+offset_left = 18.0
+offset_top = 108.0
+offset_right = 113.0
+offset_bottom = 190.0
 text = "win"
 script = ExtResource("1_oxf17")
 
-[node name="Lose" type="Button" parent="CanvasLayer"]
-offset_left = 479.0
-offset_top = 172.0
-offset_right = 581.0
-offset_bottom = 251.0
+[node name="Lose" type="Button" parent="CanvasLayer" unique_id=908917457]
+offset_left = 177.0
+offset_top = 112.0
+offset_right = 279.0
+offset_bottom = 191.0
 text = "lose"
 script = ExtResource("2_1ruyk")
 
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 341.0
-offset_top = 95.0
-offset_right = 489.0
-offset_bottom = 118.0
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=46784091]
+offset_left = 39.00003
+offset_top = 35.000004
+offset_right = 187.00003
+offset_bottom = 58.000004
 scale = Vector2(1.535, 1.535)
 text = "fight is happening!!"
+
+[node name="Monster" type="Sprite2D" parent="." unique_id=231194861]
+position = Vector2(735, 323)
 
 [connection signal="button_up" from="CanvasLayer/Lose" to="CanvasLayer/Lose" method="_on_button_up"]

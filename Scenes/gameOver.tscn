@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://df0t1xkmyqsai"]
+[gd_scene format=3 uid="uid://df0t1xkmyqsai"]
 
 [ext_resource type="Script" uid="uid://bfv5fs738nhyc" path="res://Scripts/back_title_button.gd" id="1_houp4"]
 
-[node name="Gameover" type="Control"]
+[node name="Gameover" type="Control" unique_id=720362876]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,7 +10,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BackTitleButton" type="Button" parent="."]
+[node name="BackTitleButton" type="Button" parent="." unique_id=357677057]
 layout_mode = 0
 offset_left = 262.0
 offset_top = 154.0
@@ -19,7 +19,7 @@ offset_bottom = 253.0
 text = "back to title screen"
 script = ExtResource("1_houp4")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=941440402]
 layout_mode = 0
 offset_left = 278.0
 offset_top = 75.0
