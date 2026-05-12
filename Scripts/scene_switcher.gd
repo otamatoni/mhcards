@@ -65,7 +65,7 @@ func generate_map() -> void:
 	var current_layer = 0
 	frontier.append_array(starting_nodes)
 	
-	# reverse A* somewhat
+	# variation of A* somewhat
 	while not frontier.is_empty():
 		possible_nodes.clear()
 		current_node = frontier.pop_front()
