@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbc45rpsooh3a"]
+
+[ext_resource type="Script" uid="uid://d1nhtnr2sf7ti" path="res://Scripts/win.gd" id="1_oxf17"]
+[ext_resource type="Script" uid="uid://u1tokpl701d2" path="res://Scripts/lose.gd" id="2_1ruyk"]
+[ext_resource type="Texture2D" uid="uid://dkql83hfex3wj" path="res://art_temp/Placeholders/Background_temp.webp" id="3_aqr0y"]
+[ext_resource type="PackedScene" uid="uid://bsw62q70e13bo" path="res://Scenes/card_ui/cardUI.tscn" id="4_wqxgi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8bsx"]
+size = Vector2(1152, 216)
+
+[node name="Battle" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.376471, 0.266667, 0.211765, 1)
+visibility_layer = 4
+scale = Vector2(1.152, 1.15098)
+texture = ExtResource("3_aqr0y")
+centered = false
+
+[node name="cardDropArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cardDropArea"]
+light_mask = 2
+position = Vector2(575, 372)
+shape = SubResource("RectangleShape2D_o8bsx")
+
+[node name="BattleUI" type="CanvasLayer" parent="."]
+
+[node name="Win" type="Button" parent="BattleUI"]
+offset_left = 320.0
+offset_top = 168.0
+offset_right = 415.0
+offset_bottom = 250.0
+text = "win"
+script = ExtResource("1_oxf17")
+
+[node name="Lose" type="Button" parent="BattleUI"]
+offset_left = 479.0
+offset_top = 172.0
+offset_right = 581.0
+offset_bottom = 251.0
+text = "lose"
+script = ExtResource("2_1ruyk")
+
+[node name="Label" type="Label" parent="BattleUI"]
+offset_left = 341.0
+offset_top = 95.0
+offset_right = 489.0
+offset_bottom = 118.0
+scale = Vector2(1.535, 1.535)
+text = "fight is happening!!"
+
+[node name="Hand" type="HBoxContainer" parent="BattleUI"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -150.0
+offset_right = 300.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="CardUi" parent="BattleUI/Hand" instance=ExtResource("4_wqxgi")]
+layout_mode = 2
+
+[node name="CardUi2" parent="BattleUI/Hand" instance=ExtResource("4_wqxgi")]
+layout_mode = 2
+
+[node name="CardUi3" parent="BattleUI/Hand" instance=ExtResource("4_wqxgi")]
+layout_mode = 2
+
+[connection signal="button_up" from="BattleUI/Lose" to="BattleUI/Lose" method="_on_button_up"]

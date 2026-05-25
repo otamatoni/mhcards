@@ -1,0 +1,3 @@
+GAME DEV STUFF
+
+BG size is 576px by 324px
