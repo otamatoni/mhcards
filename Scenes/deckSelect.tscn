@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://cny5lu8ril4m8"]
+[gd_scene format=3 uid="uid://cny5lu8ril4m8"]
 
 [ext_resource type="Texture2D" uid="uid://cn7ssqk54xs1o" path="res://icon.svg" id="1_btkhh"]
 [ext_resource type="Script" uid="uid://bdowij4382aqy" path="res://Scripts/back_button.gd" id="2_euotc"]
 [ext_resource type="Script" uid="uid://21o72q1dm8h1" path="res://Scripts/gs_button.gd" id="2_hgw6o"]
+[ext_resource type="Script" uid="uid://cqmo1pabydfxu" path="res://Scripts/check.gd" id="3_hgw6o"]
+[ext_resource type="Script" uid="uid://hqoamxn4i8xu" path="res://Scripts/deck_check_back.gd" id="5_n5skj"]
 
-[node name="DeckSelect" type="Control"]
+[node name="DeckSelect" type="Control" unique_id=2110944952]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,25 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GSLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 385.0
-offset_top = 312.0
-offset_right = 474.0
-offset_bottom = 335.0
-text = "greatsword"
-
-[node name="GSButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 355.0
-offset_top = 160.0
-offset_right = 491.0
-offset_bottom = 296.0
-focus_mode = 0
-icon = ExtResource("1_btkhh")
-script = ExtResource("2_hgw6o")
-
-[node name="BackButton" type="Button" parent="."]
+[node name="BackButton" type="Button" parent="." unique_id=2087969491]
 layout_mode = 0
 offset_left = 123.0
 offset_top = 85.0
@@ -40,7 +24,7 @@ focus_mode = 0
 text = "back"
 script = ExtResource("2_euotc")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1253278023]
 layout_mode = 0
 offset_left = 355.0
 offset_top = 83.0
@@ -49,5 +33,184 @@ offset_bottom = 106.0
 scale = Vector2(1.615, 1.615)
 text = "choose a starting deck"
 
-[connection signal="button_up" from="GSButton" to="GSButton" method="_on_button_up"]
+[node name="DeckIcon" type="VBoxContainer" parent="." unique_id=2011638591]
+layout_mode = 0
+offset_left = 363.0
+offset_top = 165.0
+offset_right = 499.0
+offset_bottom = 313.0
+
+[node name="WeaponIcon" type="TextureRect" parent="DeckIcon" unique_id=776022002]
+layout_mode = 2
+texture = ExtResource("1_btkhh")
+
+[node name="GSLabel" type="Label" parent="DeckIcon" unique_id=1258271073]
+layout_mode = 2
+text = "greatsword"
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="DeckIcon" unique_id=745939686]
+layout_mode = 2
+
+[node name="Check" type="Button" parent="DeckIcon/Buttons" unique_id=604853992 node_paths=PackedStringArray("deck_check_menu")]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "check"
+script = ExtResource("3_hgw6o")
+deck_check_menu = NodePath("../../../DeckCheckMenu")
+
+[node name="Use" type="Button" parent="DeckIcon/Buttons" unique_id=1164845244]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "use"
+script = ExtResource("2_hgw6o")
+
+[node name="DeckCheckMenu" type="MarginContainer" parent="." unique_id=730807065]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="ColorRect" type="ColorRect" parent="DeckCheckMenu" unique_id=1763528225]
+layout_mode = 2
+color = Color(0.19, 0.19, 0.19, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="DeckCheckMenu" unique_id=703260286]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DeckCheckMenu/MarginContainer" unique_id=100668747]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="DeckCheckMenu/MarginContainer/VBoxContainer" unique_id=1639687666]
+layout_mode = 2
+columns = 7
+
+[node name="Card" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=1515693670]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_btkhh")
+
+[node name="Card2" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=108771982]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_btkhh")
+
+[node name="Card3" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=1860289294]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_btkhh")
+
+[node name="Card4" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=1118478897]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_btkhh")
+
+[node name="Card5" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=1644135747]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_btkhh")
+
+[node name="Card6" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=427093364]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_btkhh")
+
+[node name="Card7" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=437324364]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_btkhh")
+
+[node name="Card8" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=2120827576]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_btkhh")
+
+[node name="Card9" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=1930040896]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_btkhh")
+
+[node name="Card10" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=1991000592]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_btkhh")
+
+[node name="Card11" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=61791459]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_btkhh")
+
+[node name="Card12" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=1619375780]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_btkhh")
+
+[node name="Card13" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=398395294]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_btkhh")
+
+[node name="Card14" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=1143701323]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_btkhh")
+
+[node name="Card15" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=1631179900]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_btkhh")
+
+[node name="Card16" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=1362793525]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_btkhh")
+
+[node name="Card17" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=81911349]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_btkhh")
+
+[node name="Card18" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=49106453]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_btkhh")
+
+[node name="Card19" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=1353303335]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_btkhh")
+
+[node name="Card20" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=905091898]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_btkhh")
+
+[node name="Card21" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=1485488946]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_btkhh")
+
+[node name="Back" type="Button" parent="DeckCheckMenu/MarginContainer/VBoxContainer" unique_id=761241646 node_paths=PackedStringArray("deck_check_menu")]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "back"
+script = ExtResource("5_n5skj")
+deck_check_menu = NodePath("../../..")
+
 [connection signal="button_up" from="BackButton" to="BackButton" method="_on_button_up"]
+[connection signal="button_up" from="DeckIcon/Buttons/Check" to="DeckIcon/Buttons/Check" method="_on_button_up"]
+[connection signal="button_up" from="DeckIcon/Buttons/Use" to="DeckIcon/Buttons/Use" method="_on_button_up"]
+[connection signal="button_up" from="DeckCheckMenu/MarginContainer/VBoxContainer/Back" to="DeckCheckMenu/MarginContainer/VBoxContainer/Back" method="_on_button_up"]

@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://8y3fcyyk5cvh"]
+
+[ext_resource type="Script" uid="uid://pjavg0lcyfmj" path="res://Scripts/smithy.gd" id="1_msrcn"]
+
+[node name="Smithy" type="Control" unique_id=53344513 node_paths=PackedStringArray("option1", "option2", "option3")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_msrcn")
+option1 = NodePath("UI/MainUI/Upgrades/Option1")
+option2 = NodePath("UI/MainUI/Upgrades/Option2")
+option3 = NodePath("UI/MainUI/Upgrades/Option3")
+
+[node name="Label" type="Label" parent="." unique_id=511339743]
+layout_mode = 0
+offset_left = 451.0
+offset_top = 62.0
+offset_right = 609.0
+offset_bottom = 129.0
+theme_override_font_sizes/font_size = 48
+text = "smithy"
+
+[node name="UI" type="MarginContainer" parent="." unique_id=430529371]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainUI" type="MarginContainer" parent="UI" unique_id=224270312]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Upgrades" type="VBoxContainer" parent="UI/MainUI" unique_id=1939946081]
+layout_mode = 2
+
+[node name="Option1" type="Button" parent="UI/MainUI/Upgrades" unique_id=381391710]
+custom_minimum_size = Vector2(800, 80)
+layout_mode = 2
+
+[node name="Option2" type="Button" parent="UI/MainUI/Upgrades" unique_id=1850253060]
+custom_minimum_size = Vector2(800, 80)
+layout_mode = 2
+
+[node name="Option3" type="Button" parent="UI/MainUI/Upgrades" unique_id=978841537]
+custom_minimum_size = Vector2(800, 80)
+layout_mode = 2
+
+[node name="Back" type="Button" parent="." unique_id=1375911306]
+layout_mode = 0
+offset_left = 489.0
+offset_top = 528.0
+offset_right = 570.0
+offset_bottom = 581.0
+theme_override_font_sizes/font_size = 32
+text = "back"

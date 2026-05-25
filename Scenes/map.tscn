@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bipyx6d4bd1dk"]
+[gd_scene format=3 uid="uid://bipyx6d4bd1dk"]
 
 [ext_resource type="Script" uid="uid://dqbvtpuponlfh" path="res://Scripts/map_drawer.gd" id="1_26yhd"]
 [ext_resource type="Script" uid="uid://bjk8mhpnrki5w" path="res://Scripts/reset_button.gd" id="1_ci6au"]
 
-[node name="Map" type="Control"]
+[node name="Map" type="Control" unique_id=344803909]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_26yhd")
 
-[node name="ResetButton" type="Button" parent="."]
+[node name="ResetButton" type="Button" parent="." unique_id=1819875582]
 layout_mode = 0
 offset_left = 12.0
 offset_top = 13.0
@@ -22,7 +22,7 @@ focus_mode = 0
 text = "reset"
 script = ExtResource("1_ci6au")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=227821676]
 layout_mode = 0
 offset_left = 79.0
 offset_top = 12.0
