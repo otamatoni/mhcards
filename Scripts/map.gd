@@ -1,7 +1,9 @@
 extends Control
 
-var nodes_per_layer = 5 # width
-var num_layers = 7 # height
+# export reusable map variables
+
+var nodes_per_layer = MapVariables.nodes_per_layer # width
+var num_layers = MapVariables.num_layers # height
 var map = [] # 0 = no node, 1 = valid node, 2 = past node, 3 = selectable node, 4 = past selected node; SHUD MAKE ENUM
 var paths = {}
 var map_gui_positions = []
@@ -37,7 +39,7 @@ func _ready() -> void:
 	# draw nodes as buttons
 	for y in range(num_layers):
 		for x in range(nodes_per_layer):
-			if map[y][x][1] != 0:
+			if map[y][x][1] != MapVariables.map_states.NO_NODE:
 				var node = Button.new()
 				
 				# button functionality
@@ -59,11 +61,11 @@ func _ready() -> void:
 				
 				# node selectability logic
 				node.disabled = true
-				if map[y][x][1] == 2:
+				if map[y][x][1] == MapVariables.map_states.PAST_NODE:
 					node.add_theme_stylebox_override('disabled', past_node_color)
-				elif map[y][x][1] == 3:
+				elif map[y][x][1] == MapVariables.map_states.SELECTABLE_NODE:
 					node.disabled = false
-				elif map[y][x][1] == 4:
+				elif map[y][x][1] == MapVariables.map_states.PAST_SELECTED_NODE:
 					node.add_theme_stylebox_override('disabled', previous_selected_color)
 				
 				add_child(node)

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://tgexw4xx5ebl"]
 
-[ext_resource type="Script" uid="uid://bth0jy7adcxd" path="res://Scripts/chef.gd" id="1_sqin4"]
+[ext_resource type="Script" uid="uid://bth0jy7adcxd" path="res://Scripts/EventScripts/chef.gd" id="1_eumei"]
 
 [node name="Chef" type="Control" unique_id=53344513 node_paths=PackedStringArray("option1", "option2", "option3")]
 layout_mode = 3
@@ -9,7 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_sqin4")
+script = ExtResource("1_eumei")
 option1 = NodePath("UI/MainUI/Upgrades/Option1")
 option2 = NodePath("UI/MainUI/Upgrades/Option2")
 option3 = NodePath("UI/MainUI/Upgrades/Option3")
