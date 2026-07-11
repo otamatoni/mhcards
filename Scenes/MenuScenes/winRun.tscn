@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://p13drmv61fk2"]
+
+[ext_resource type="Script" uid="uid://dkbbm3s5fng3d" path="res://Scenes/MenuScenes/win_back_button.gd" id="1_0wsac"]
+
+[node name="WinRun" type="Node2D" unique_id=834684025]
+
+[node name="Label" type="Label" parent="." unique_id=1897581916]
+offset_left = 333.0
+offset_top = 194.0
+offset_right = 714.0
+offset_bottom = 287.0
+theme_override_font_sizes/font_size = 32
+text = "congrats you beat zorah 
+now do it again :>"
+
+[node name="Button" type="Button" parent="." unique_id=103438908]
+offset_left = 467.0
+offset_top = 394.0
+offset_right = 630.0
+offset_bottom = 471.0
+theme_override_font_sizes/font_size = 32
+text = "back"
+script = ExtResource("1_0wsac")
+
+[connection signal="button_up" from="Button" to="Button" method="_on_button_up"]

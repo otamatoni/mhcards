@@ -17,13 +17,12 @@ func _ready() -> void:
 	load_map()
 	print(map)
 	
-# handles when a node is pressed, switch to battle scene
+# handles when a node is pressed, switch to different scenes based on node pressed
 func handle_node_is_up(node_id, node_position) -> void:
 	print('scene switcher got node id ', node_id, ' at pos ', node_position)
 	update_map(node_position)
 	var next_scene
 	var win_button
-	var main_node
 	match node_id:
 		events.SMALL_MON:
 			next_scene = preload(PathReferences.battle_event).instantiate()
@@ -69,11 +68,11 @@ func handle_node_is_up(node_id, node_position) -> void:
 			win_button.button_up.connect(handle_won)
 			current_scene.queue_free()
 			current_scene = next_scene
-		_:
+		_: # elder dragon
 			next_scene = preload(PathReferences.battle_event).instantiate()
 			add_child(next_scene)
 			win_button = next_scene.get_node("CanvasLayer/Win")
-			win_button.button_up.connect(handle_won)
+			win_button.button_up.connect(handle_won_elder)
 			next_scene.set_battle_type('elder')
 			current_scene.queue_free()
 			current_scene = next_scene
@@ -83,8 +82,25 @@ func handle_node_is_up(node_id, node_position) -> void:
 func handle_won() -> void:
 	load_map()
 	
+# generates and loads new map when region is finished aka elder defeated
+func handle_won_elder() -> void:
+	# if player won against zorah
+	if PlayerData.region == 4:
+		get_tree().change_scene_to_file(PathReferences.win_run_scene)
+		return
+	PlayerData.region += 1
+	print(PlayerData.region)
+	generate_map()
+	load_map()
+	
 # logic for generating initial map
 func generate_map() -> void:
+	# clear previous data 
+	map.clear()
+	paths.clear()
+	final_nodes.clear()
+	num_layers -= 1 # band-aid solution lol
+	
 	# generate grid
 	var row
 	for i in range(num_layers):
@@ -172,11 +188,9 @@ func generate_map() -> void:
 # loap map into scene
 func load_map() -> void:
 	# pre load scene
-	var next_scene = preload("res://Scenes/map.tscn").instantiate()
+	var next_scene = preload(PathReferences.map_scene).instantiate()
 	
 	# transfer params
-	next_scene.nodes_per_layer = nodes_per_layer
-	next_scene.num_layers = num_layers
 	next_scene.map = map
 	next_scene.paths = paths
 	

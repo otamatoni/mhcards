@@ -1,6 +1,6 @@
 extends Control
 
-# export reusable map variables
+@export var region_label : Label
 
 var nodes_per_layer = MapVariables.nodes_per_layer # width
 var num_layers = MapVariables.num_layers # height
@@ -13,6 +13,19 @@ signal node_is_up(node_id, node_position)
 
 # draws map with params from SceneSwitcher
 func _ready() -> void:
+	# change text based on region
+	match PlayerData.region:
+		0:
+			region_label.text = 'ancient forest'
+		1:
+			region_label.text = 'wildspire wastes'
+		2:
+			region_label.text = 'coral highlands'
+		3: 
+			region_label.text = 'rotten vale'
+		4:
+			region_label.text = 'everstream'
+	
 	# initialize map_gui_positions 
 	var row
 	for i in range(num_layers):

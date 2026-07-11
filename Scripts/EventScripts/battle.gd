@@ -33,5 +33,21 @@ func fight_big() -> void:
 	monster.texture = texture
 	
 func fight_elder() -> void:
-	var texture = load("res://Sprites/nergi_meme.png")
-	monster.texture = texture
+	match PlayerData.region:
+		0:
+			var texture = load("res://Sprites/kushala_meme.jpg")
+			monster.texture = texture
+		1:
+			var texture = load("res://Sprites/teostra_meme.jpg")
+			monster.texture = texture
+		2:
+			var texture = load("res://Sprites/kirin_mlp.png")
+			monster.texture = texture
+		3:
+			var texture = load("res://Sprites/vaal.jpeg")
+			monster.texture = texture
+		4:
+			var texture = load("res://Sprites/zorah.png")
+			monster.texture = texture
+			
+			
