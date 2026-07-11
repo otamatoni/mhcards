@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bsw62q70e13bo"]
+[gd_scene format=3 uid="uid://bsw62q70e13bo"]
 
 [ext_resource type="Theme" uid="uid://bl2tin3keb185" path="res://main_theme.tres" id="1_l05c3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ouj1c"]
 size = Vector2(100, 150)
 
-[node name="CardUi" type="Control"]
+[node name="CardUi" type="Control" unique_id=1165459789]
 custom_minimum_size = Vector2(100, 150)
 layout_mode = 3
 anchors_preset = 15
@@ -16,7 +16,7 @@ offset_bottom = -498.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Color" type="ColorRect" parent="."]
+[node name="Color" type="ColorRect" parent="." unique_id=564176145]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,7 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.592776, 0.433233, 0.192699, 1)
 
-[node name="State" type="Label" parent="."]
+[node name="State" type="Label" parent="." unique_id=712541214]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -37,9 +37,9 @@ text = "State"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="dropDetection" type="Area2D" parent="."]
+[node name="dropDetection" type="Area2D" parent="." unique_id=1657652228]
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="dropDetection"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dropDetection" unique_id=122687963]
 position = Vector2(50, 75)
 shape = SubResource("RectangleShape2D_ouj1c")

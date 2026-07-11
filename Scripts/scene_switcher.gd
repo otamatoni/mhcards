@@ -1,14 +1,13 @@
 extends Node
 
-@export var num_node_types = 8 
 @export var max_trials = 2
 @export var num_starting_nodes = 2
 @onready var current_scene = $Map
 var final_nodes = []
 
 # needed for Map scene
-@export var num_layers = 7 # height
-@export var nodes_per_layer = 5 # width
+var nodes_per_layer = MapVariables.nodes_per_layer # width
+var num_layers = MapVariables.num_layers # height
 var map = [] # 3D arr, [x][y][Vector2(event type, node status)]
 var paths = {}
 enum events {SMALL_MON, BIG_MON, CAMP, EXPE, SMITHY, CHEF}
@@ -27,7 +26,7 @@ func handle_node_is_up(node_id, node_position) -> void:
 	var main_node
 	match node_id:
 		events.SMALL_MON:
-			next_scene = preload("res://Scenes/battle.tscn").instantiate()
+			next_scene = preload(PathReferences.battle_event).instantiate()
 			add_child(next_scene)
 			win_button = next_scene.get_node("CanvasLayer/Win")
 			win_button.button_up.connect(handle_won)
@@ -35,7 +34,7 @@ func handle_node_is_up(node_id, node_position) -> void:
 			current_scene.queue_free()
 			current_scene = next_scene
 		events.BIG_MON:
-			next_scene = preload("res://Scenes/battle.tscn").instantiate()
+			next_scene = preload(PathReferences.battle_event).instantiate()
 			add_child(next_scene)
 			win_button = next_scene.get_node("CanvasLayer/Win")
 			win_button.button_up.connect(handle_won)
@@ -43,35 +42,35 @@ func handle_node_is_up(node_id, node_position) -> void:
 			current_scene.queue_free()
 			current_scene = next_scene
 		events.CAMP:
-			next_scene = preload("res://Scenes/camp.tscn").instantiate()
+			next_scene = preload(PathReferences.camp_event).instantiate()
 			add_child(next_scene)
 			win_button = next_scene.get_node("Back")
 			win_button.button_up.connect(handle_won)
 			current_scene.queue_free()
 			current_scene = next_scene
 		events.EXPE:
-			next_scene = preload("res://Scenes/expedition.tscn").instantiate()
+			next_scene = preload(PathReferences.expedition_event).instantiate()
 			add_child(next_scene)
 			win_button = next_scene.get_node("Back")
 			win_button.button_up.connect(handle_won)
 			current_scene.queue_free()
 			current_scene = next_scene
 		events.SMITHY:
-			next_scene = preload("res://Scenes/smithy.tscn").instantiate()
+			next_scene = preload(PathReferences.smithy_event).instantiate()
 			add_child(next_scene)
 			win_button = next_scene.get_node("Back")
 			win_button.button_up.connect(handle_won)
 			current_scene.queue_free()
 			current_scene = next_scene
 		events.CHEF:
-			next_scene = preload("res://Scenes/chef.tscn").instantiate()
+			next_scene = preload(PathReferences.chef_event).instantiate()
 			add_child(next_scene)
 			win_button = next_scene.get_node("Back")
 			win_button.button_up.connect(handle_won)
 			current_scene.queue_free()
 			current_scene = next_scene
 		_:
-			next_scene = preload("res://Scenes/battle.tscn").instantiate()
+			next_scene = preload(PathReferences.battle_event).instantiate()
 			add_child(next_scene)
 			win_button = next_scene.get_node("CanvasLayer/Win")
 			win_button.button_up.connect(handle_won)

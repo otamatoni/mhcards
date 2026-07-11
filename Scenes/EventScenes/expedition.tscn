@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cbaekbyhkwriy"]
 
-[ext_resource type="Script" uid="uid://dchntya6ilrq3" path="res://Scripts/expedition.gd" id="1_lcvqj"]
+[ext_resource type="Script" uid="uid://dchntya6ilrq3" path="res://Scripts/EventScripts/expedition.gd" id="1_hrecc"]
 
 [node name="Expedition" type="Control" unique_id=53344513 node_paths=PackedStringArray("description")]
 layout_mode = 3
@@ -9,7 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_lcvqj")
+script = ExtResource("1_hrecc")
 description = NodePath("Description")
 
 [node name="Label" type="Label" parent="." unique_id=830472214]

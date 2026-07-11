@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://cny5lu8ril4m8"]
 
-[ext_resource type="Texture2D" uid="uid://cn7ssqk54xs1o" path="res://icon.svg" id="1_btkhh"]
-[ext_resource type="Script" uid="uid://bdowij4382aqy" path="res://Scripts/back_button.gd" id="2_euotc"]
-[ext_resource type="Script" uid="uid://21o72q1dm8h1" path="res://Scripts/gs_button.gd" id="2_hgw6o"]
-[ext_resource type="Script" uid="uid://cqmo1pabydfxu" path="res://Scripts/check.gd" id="3_hgw6o"]
-[ext_resource type="Script" uid="uid://hqoamxn4i8xu" path="res://Scripts/deck_check_back.gd" id="5_n5skj"]
+[ext_resource type="Script" uid="uid://bdowij4382aqy" path="res://Scripts/ButtonScripts/back_button.gd" id="1_e5g4j"]
+[ext_resource type="Texture2D" uid="uid://cn7ssqk54xs1o" path="res://icon.svg" id="2_3b3so"]
+[ext_resource type="Script" uid="uid://cqmo1pabydfxu" path="res://Scripts/ButtonScripts/check_button.gd" id="3_tc4ad"]
+[ext_resource type="Script" uid="uid://21o72q1dm8h1" path="res://Scripts/ButtonScripts/gs_button.gd" id="4_2kvf4"]
+[ext_resource type="Script" uid="uid://hqoamxn4i8xu" path="res://Scripts/ButtonScripts/deck_check_back.gd" id="5_41yah"]
 
 [node name="DeckSelect" type="Control" unique_id=2110944952]
 layout_mode = 3
@@ -22,7 +22,7 @@ offset_right = 240.0
 offset_bottom = 138.0
 focus_mode = 0
 text = "back"
-script = ExtResource("2_euotc")
+script = ExtResource("1_e5g4j")
 
 [node name="Label" type="Label" parent="." unique_id=1253278023]
 layout_mode = 0
@@ -42,7 +42,7 @@ offset_bottom = 313.0
 
 [node name="WeaponIcon" type="TextureRect" parent="DeckIcon" unique_id=776022002]
 layout_mode = 2
-texture = ExtResource("1_btkhh")
+texture = ExtResource("2_3b3so")
 
 [node name="GSLabel" type="Label" parent="DeckIcon" unique_id=1258271073]
 layout_mode = 2
@@ -56,7 +56,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "check"
-script = ExtResource("3_hgw6o")
+script = ExtResource("3_tc4ad")
 deck_check_menu = NodePath("../../../DeckCheckMenu")
 
 [node name="Use" type="Button" parent="DeckIcon/Buttons" unique_id=1164845244]
@@ -64,7 +64,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 text = "use"
-script = ExtResource("2_hgw6o")
+script = ExtResource("4_2kvf4")
 
 [node name="DeckCheckMenu" type="MarginContainer" parent="." unique_id=730807065]
 visible = false
@@ -100,114 +100,114 @@ columns = 7
 [node name="Card" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=1515693670]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("1_btkhh")
+texture = ExtResource("2_3b3so")
 
 [node name="Card2" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=108771982]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("1_btkhh")
+texture = ExtResource("2_3b3so")
 
 [node name="Card3" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=1860289294]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("1_btkhh")
+texture = ExtResource("2_3b3so")
 
 [node name="Card4" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=1118478897]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("1_btkhh")
+texture = ExtResource("2_3b3so")
 
 [node name="Card5" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=1644135747]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("1_btkhh")
+texture = ExtResource("2_3b3so")
 
 [node name="Card6" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=427093364]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("1_btkhh")
+texture = ExtResource("2_3b3so")
 
 [node name="Card7" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=437324364]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("1_btkhh")
+texture = ExtResource("2_3b3so")
 
 [node name="Card8" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=2120827576]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("1_btkhh")
+texture = ExtResource("2_3b3so")
 
 [node name="Card9" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=1930040896]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("1_btkhh")
+texture = ExtResource("2_3b3so")
 
 [node name="Card10" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=1991000592]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("1_btkhh")
+texture = ExtResource("2_3b3so")
 
 [node name="Card11" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=61791459]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("1_btkhh")
+texture = ExtResource("2_3b3so")
 
 [node name="Card12" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=1619375780]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("1_btkhh")
+texture = ExtResource("2_3b3so")
 
 [node name="Card13" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=398395294]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("1_btkhh")
+texture = ExtResource("2_3b3so")
 
 [node name="Card14" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=1143701323]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("1_btkhh")
+texture = ExtResource("2_3b3so")
 
 [node name="Card15" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=1631179900]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("1_btkhh")
+texture = ExtResource("2_3b3so")
 
 [node name="Card16" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=1362793525]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("1_btkhh")
+texture = ExtResource("2_3b3so")
 
 [node name="Card17" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=81911349]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("1_btkhh")
+texture = ExtResource("2_3b3so")
 
 [node name="Card18" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=49106453]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("1_btkhh")
+texture = ExtResource("2_3b3so")
 
 [node name="Card19" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=1353303335]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("1_btkhh")
+texture = ExtResource("2_3b3so")
 
 [node name="Card20" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=905091898]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("1_btkhh")
+texture = ExtResource("2_3b3so")
 
 [node name="Card21" type="TextureRect" parent="DeckCheckMenu/MarginContainer/VBoxContainer/GridContainer" unique_id=1485488946]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-texture = ExtResource("1_btkhh")
+texture = ExtResource("2_3b3so")
 
 [node name="Back" type="Button" parent="DeckCheckMenu/MarginContainer/VBoxContainer" unique_id=761241646 node_paths=PackedStringArray("deck_check_menu")]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "back"
-script = ExtResource("5_n5skj")
+script = ExtResource("5_41yah")
 deck_check_menu = NodePath("../../..")
 
 [connection signal="button_up" from="BackButton" to="BackButton" method="_on_button_up"]

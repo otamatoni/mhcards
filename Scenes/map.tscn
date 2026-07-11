@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bipyx6d4bd1dk"]
 
-[ext_resource type="Script" uid="uid://dqbvtpuponlfh" path="res://Scripts/map_drawer.gd" id="1_26yhd"]
-[ext_resource type="Script" uid="uid://bjk8mhpnrki5w" path="res://Scripts/reset_button.gd" id="1_ci6au"]
+[ext_resource type="Script" uid="uid://dqbvtpuponlfh" path="res://Scripts/map.gd" id="1_26yhd"]
+[ext_resource type="Script" uid="uid://bjk8mhpnrki5w" path="res://Scripts/ButtonScripts/reset_button.gd" id="1_ci6au"]
 
 [node name="Map" type="Control" unique_id=344803909]
 layout_mode = 3

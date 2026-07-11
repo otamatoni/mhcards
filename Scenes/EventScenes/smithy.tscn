@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://8y3fcyyk5cvh"]
 
-[ext_resource type="Script" uid="uid://pjavg0lcyfmj" path="res://Scripts/smithy.gd" id="1_msrcn"]
+[ext_resource type="Script" uid="uid://pjavg0lcyfmj" path="res://Scripts/EventScripts/smithy.gd" id="1_wx2ud"]
 
 [node name="Smithy" type="Control" unique_id=53344513 node_paths=PackedStringArray("option1", "option2", "option3")]
 layout_mode = 3
@@ -9,7 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_msrcn")
+script = ExtResource("1_wx2ud")
 option1 = NodePath("UI/MainUI/Upgrades/Option1")
 option2 = NodePath("UI/MainUI/Upgrades/Option2")
 option3 = NodePath("UI/MainUI/Upgrades/Option3")
