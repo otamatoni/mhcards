@@ -11,6 +11,7 @@ const smithy_event = "res://Scenes/EventScenes/smithy.tscn"
 const deck_select_scene = "res://Scenes/MenuScenes/deckSelect.tscn"
 const game_over_scene = "res://Scenes/MenuScenes/gameOver.tscn"
 const title_screen_scene = "res://Scenes/MenuScenes/titleScreen.tscn"
+const win_run_scene = "res://Scenes/MenuScenes/winRun.tscn"
 
 # util scenes
 const map_scene = "res://Scenes/map.tscn"

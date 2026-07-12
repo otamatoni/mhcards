@@ -19,6 +19,10 @@ run/main_scene="uid://bxpfvtnaymwpg"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+PlayerData="*uid://c2bfmx4l3bkd"
+
 [dotnet]
 
 project/assembly_name="mhcards"
