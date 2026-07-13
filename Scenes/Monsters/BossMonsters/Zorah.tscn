@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://y5w4yxakgfib"]
 
+[ext_resource type="Script" uid="uid://dl08xl714t1gu" path="res://Scripts/Monsters/BossMonsters/Zorah.gd" id="1_5dg5g"]
 [ext_resource type="Texture2D" uid="uid://ce34t7ysaw3cw" path="res://Sprites/Monsters/BossMonsters/zorah.png" id="1_n7pda"]
 
 [node name="Zorah" type="Node2D" unique_id=784800740]
+script = ExtResource("1_5dg5g")
 
 [node name="Zorah" type="Sprite2D" parent="." unique_id=1949714696]
 position = Vector2(734, 324)

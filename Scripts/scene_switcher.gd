@@ -6,8 +6,8 @@ extends Node
 var final_nodes = []
 
 # needed for Map scene
-var nodes_per_layer = MapVariables.nodes_per_layer # width
-var num_layers = MapVariables.num_layers # height
+var nodes_per_layer # width
+var num_layers # height
 var map = [] # 3D arr, [x][y][Vector2(event type, node status)]
 var paths = {}
 enum events {SMALL_MON, BIG_MON, CAMP, EXPE, SMITHY, CHEF}
@@ -97,6 +97,34 @@ func handle_won_boss() -> void:
 	
 # logic for generating initial map
 func generate_map() -> void:
+	# map dimensions can differ per region
+	match PlayerData.region:
+		0:
+			nodes_per_layer = MapVariables.forest_nodes_per_layer
+			num_layers = MapVariables.forest_num_layers
+			num_starting_nodes = MapVariables.forest_num_starting_nodes
+			
+		1:
+			nodes_per_layer = MapVariables.wildspire_nodes_per_layer
+			num_layers = MapVariables.wildspire_num_layers
+			num_starting_nodes = MapVariables.wildspire_num_starting_nodes
+			
+		2:
+			nodes_per_layer = MapVariables.coral_nodes_per_layer
+			num_layers = MapVariables.coral_num_layers
+			num_starting_nodes = MapVariables.coral_num_starting_nodes
+			
+		3: 
+			nodes_per_layer = MapVariables.vale_nodes_per_layer
+			num_layers = MapVariables.vale_num_layers
+			num_starting_nodes = MapVariables.vale_num_starting_nodes
+			
+		4:
+			nodes_per_layer = MapVariables.everstream_nodes_per_layer
+			num_layers = MapVariables.everstream_num_layers
+			num_starting_nodes = MapVariables.everstream_num_starting_nodes
+			
+	
 	# clear previous data 
 	map.clear()
 	paths.clear()
@@ -108,7 +136,12 @@ func generate_map() -> void:
 	for i in range(num_layers):
 		row = []
 		for j in range(nodes_per_layer):
-			row.append([randi() % events.size(), 0])
+			# add the event type
+			if PlayerData.region == 4:
+				var everstream_events = [events.CAMP, events.EXPE, events.SMITHY, events.CHEF]
+				row.append([everstream_events.pick_random(), 0])
+			else:
+				row.append([randi() % events.size(), 0])
 		map.append(row)
 	
 	# generate starting nodes

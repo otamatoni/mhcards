@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://e1nnip1boi8f"]
 
 [ext_resource type="Texture2D" uid="uid://d0cbbl55xwhtr" path="res://Sprites/Monsters/SmallMonsters/gajau.jpg" id="1_jtl7h"]
+[ext_resource type="Script" uid="uid://dvmgl7k3aoptb" path="res://Scripts/Monsters/SmallMonsters/Gajau.gd" id="1_y3bwh"]
 
 [node name="Gajau" type="Node2D" unique_id=665686467]
+script = ExtResource("1_y3bwh")
 
 [node name="Gajau" type="Sprite2D" parent="." unique_id=387571298]
 position = Vector2(685, 310)

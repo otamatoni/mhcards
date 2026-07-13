@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://co6k00jxb8nm4"]
 
+[ext_resource type="Script" uid="uid://c7q51kif4g1s3" path="res://Scripts/Monsters/BigMonsters/TzitziYaKu.gd" id="1_tsv7k"]
 [ext_resource type="Texture2D" uid="uid://1ppej5swb6qm" path="res://Sprites/Monsters/BigMonsters/tzi.jpg" id="1_tv1vg"]
 
 [node name="TzitziYaKu" type="Node2D" unique_id=1358415368]
+script = ExtResource("1_tsv7k")
 
 [node name="Tzi" type="Sprite2D" parent="." unique_id=243647260]
 position = Vector2(811, 363)

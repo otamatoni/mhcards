@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://dibnbyfkga5xe"]
 
 [ext_resource type="Texture2D" uid="uid://bec252kfob6tm" path="res://Sprites/Monsters/BigMonsters/rath.png" id="1_ngk3b"]
+[ext_resource type="Script" uid="uid://do5qlkidgel55" path="res://Scripts/Monsters/BigMonsters/Rathian.gd" id="1_wg3h7"]
 
 [node name="Rathian" type="Node2D" unique_id=60537357]
+script = ExtResource("1_wg3h7")
 
 [node name="Rath" type="Sprite2D" parent="." unique_id=1860887126]
 position = Vector2(711, 314)
