@@ -68,12 +68,12 @@ func handle_node_is_up(node_id, node_position) -> void:
 			win_button.button_up.connect(handle_won)
 			current_scene.queue_free()
 			current_scene = next_scene
-		_: # elder dragon
+		_: # boss monster
 			next_scene = preload(PathReferences.battle_event).instantiate()
 			add_child(next_scene)
 			win_button = next_scene.get_node("CanvasLayer/Win")
-			win_button.button_up.connect(handle_won_elder)
-			next_scene.set_battle_type('elder')
+			win_button.button_up.connect(handle_won_boss)
+			next_scene.set_battle_type('boss')
 			current_scene.queue_free()
 			current_scene = next_scene
 			
@@ -82,12 +82,14 @@ func handle_node_is_up(node_id, node_position) -> void:
 func handle_won() -> void:
 	load_map()
 	
-# generates and loads new map when region is finished aka elder defeated
-func handle_won_elder() -> void:
+# generates and loads new map when region is finished
+func handle_won_boss() -> void:
 	# if player won against zorah
 	if PlayerData.region == 4:
+		PlayerData.region = 0
 		get_tree().change_scene_to_file(PathReferences.win_run_scene)
 		return
+	# otherwise switch region
 	PlayerData.region += 1
 	print(PlayerData.region)
 	generate_map()
@@ -213,7 +215,7 @@ func update_map(node_position) -> void:
 			map[node_position[0]+1][i][1] = 2
 	
 	# mark the selected node as previous selected 
-	map[node_position[0]][node_position[1]][1] = 4	
+	map[node_position[0]][node_position[1]][1] = 4
 	
 	# mark reachable nodes as selectable
 	if paths.has(var_to_str(node_position)):

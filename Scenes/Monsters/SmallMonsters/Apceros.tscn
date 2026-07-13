@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://kob28f7jfmji"]
+
+[ext_resource type="Texture2D" uid="uid://dnethgnfkq814" path="res://Sprites/Monsters/SmallMonsters/apceros.jpg" id="1_bspn2"]
+
+[node name="Apceros" type="Node2D" unique_id=1509892371]
+
+[node name="Apceros" type="Sprite2D" parent="." unique_id=1816241280]
+position = Vector2(701, 315)
+texture = ExtResource("1_bspn2")

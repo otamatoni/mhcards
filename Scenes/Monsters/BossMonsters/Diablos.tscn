@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://di5u2yhlc118l"]
+
+[ext_resource type="Texture2D" uid="uid://6t4nmveamjbs" path="res://Sprites/Monsters/BossMonsters/cactus_eater.jpg" id="1_2alns"]
+
+[node name="Diablos" type="Node2D" unique_id=1198385740]
+
+[node name="CactusEater" type="Sprite2D" parent="." unique_id=2086115643]
+position = Vector2(755, 316.99997)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("1_2alns")

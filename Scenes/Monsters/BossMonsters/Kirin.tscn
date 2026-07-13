@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c1l06u0vukyhg"]
+
+[ext_resource type="Texture2D" uid="uid://cqrqi8l1vwnwl" path="res://Sprites/Monsters/BossMonsters/kirin_mlp.png" id="1_ic5d2"]
+
+[node name="Kirin" type="Node2D" unique_id=1603082391]
+
+[node name="KirinMlp" type="Sprite2D" parent="." unique_id=1062558081]
+position = Vector2(793, 379.00003)
+scale = Vector2(0.61001414, 0.6100141)
+texture = ExtResource("1_ic5d2")

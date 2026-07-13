@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://co6k00jxb8nm4"]
+
+[ext_resource type="Texture2D" uid="uid://1ppej5swb6qm" path="res://Sprites/Monsters/BigMonsters/tzi.jpg" id="1_tv1vg"]
+
+[node name="TzitziYaKu" type="Node2D" unique_id=1358415368]
+
+[node name="Tzi" type="Sprite2D" parent="." unique_id=243647260]
+position = Vector2(811, 363)
+scale = Vector2(1.4221556, 1.4221557)
+texture = ExtResource("1_tv1vg")

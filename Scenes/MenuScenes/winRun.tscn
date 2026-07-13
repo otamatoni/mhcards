@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://p13drmv61fk2"]
 
-[ext_resource type="Script" uid="uid://dkbbm3s5fng3d" path="res://Scenes/MenuScenes/win_back_button.gd" id="1_0wsac"]
+[ext_resource type="Script" uid="uid://dkbbm3s5fng3d" path="res://Scripts/ButtonScripts/win_back_button.gd" id="1_0wsac"]
 
 [node name="WinRun" type="Node2D" unique_id=834684025]
 

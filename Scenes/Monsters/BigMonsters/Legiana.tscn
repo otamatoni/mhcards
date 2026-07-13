@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bvgxkrbnbf66y"]
+
+[ext_resource type="Texture2D" uid="uid://ekd6ryfgxsew" path="res://Sprites/Monsters/BigMonsters/legiana.jpg" id="1_x2cnp"]
+
+[node name="Legiana" type="Node2D" unique_id=1798106792]
+
+[node name="Legiana" type="Sprite2D" parent="." unique_id=1439817654]
+position = Vector2(779, 324.99997)
+scale = Vector2(1.7651932, 1.7651933)
+texture = ExtResource("1_x2cnp")

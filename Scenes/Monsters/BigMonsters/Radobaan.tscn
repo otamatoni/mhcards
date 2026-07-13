@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://doklnuive5xsj"]
+
+[ext_resource type="Texture2D" uid="uid://dkseqw4vm6lwy" path="res://Sprites/Monsters/BigMonsters/rado.jpg" id="1_5tdgb"]
+
+[node name="Radobaan" type="Node2D" unique_id=1890060853]
+
+[node name="Rado" type="Sprite2D" parent="." unique_id=664417833]
+position = Vector2(739, 336)
+texture = ExtResource("1_5tdgb")

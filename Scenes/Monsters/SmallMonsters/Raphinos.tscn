@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://myxty6h6csif"]
+
+[ext_resource type="Texture2D" uid="uid://bfom1rqug3yc" path="res://Sprites/Monsters/SmallMonsters/raphinos.jpg" id="1_s4iu6"]
+
+[node name="Raphinos" type="Node2D" unique_id=1042454688]
+
+[node name="Raphinos" type="Sprite2D" parent="." unique_id=693280925]
+position = Vector2(728, 290)
+texture = ExtResource("1_s4iu6")
