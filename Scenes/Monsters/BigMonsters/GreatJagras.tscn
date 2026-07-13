@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cfv8h6nlnj12s"]
 
 [ext_resource type="Texture2D" uid="uid://dlsvj0qdqf5bs" path="res://Sprites/Monsters/BigMonsters/great jagras parts.png" id="1_0tyny"]
+[ext_resource type="Script" uid="uid://dao0rjk8yvuds" path="res://Scripts/Monsters/BigMonsters/GreatJagras.gd" id="1_rrlnb"]
 
 [sub_resource type="Animation" id="Animation_eyej7"]
 length = 0.001
@@ -1409,6 +1410,7 @@ _data = {
 }
 
 [node name="GreatJagras" type="Node2D" unique_id=790992869]
+script = ExtResource("1_rrlnb")
 
 [node name="Polygons" type="Node2D" parent="." unique_id=1594537680]
 
@@ -1437,13 +1439,13 @@ visible = false
 [node name="hip" type="Bone2D" parent="Skeleton2D" unique_id=1015340763]
 position = Vector2(251, 363)
 rotation = -0.785406
-scale = Vector2(0.99999994, 0.99999994)
+scale = Vector2(0.9999999, 0.9999999)
 rest = Transform2D(0.707101, -0.707112, 0.707112, 0.707101, 251, 363)
 
 [node name="spine1" type="Bone2D" parent="Skeleton2D/hip" unique_id=749787526]
 position = Vector2(51, 50)
 rotation = 0.824781
-scale = Vector2(0.99999994, 0.99999994)
+scale = Vector2(0.9999999, 0.9999999)
 rest = Transform2D(0.678718, 0.734399, -0.734399, 0.678718, 51, 50)
 
 [node name="spine2" type="Bone2D" parent="Skeleton2D/hip/spine1" unique_id=131187049]

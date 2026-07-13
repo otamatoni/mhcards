@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://cdolxikv2lyhx"]
 
+[ext_resource type="Script" uid="uid://dn5dvgpvmeufl" path="res://Scripts/Monsters/BigMonsters/Paolumu.gd" id="1_tbqx6"]
 [ext_resource type="Texture2D" uid="uid://custt7mouymy6" path="res://Sprites/Monsters/BigMonsters/pao.jpg" id="1_vdoxl"]
 
 [node name="Paolumu" type="Node2D" unique_id=1138606794]
+script = ExtResource("1_tbqx6")
 
 [node name="Pao" type="Sprite2D" parent="." unique_id=1642781559]
 position = Vector2(743.00006, 305)

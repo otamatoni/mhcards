@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://b4pyhwtpbnud8"]
 
+[ext_resource type="Script" uid="uid://mavgeiumimr5" path="res://Scripts/Monsters/BigMonsters/Jyuratodus.gd" id="1_5356d"]
 [ext_resource type="Texture2D" uid="uid://dtorjsjaumt3r" path="res://Sprites/Monsters/BigMonsters/jyura.jpg" id="1_vrpo5"]
 
 [node name="Jyuratodus" type="Node2D" unique_id=1937558198]
+script = ExtResource("1_5356d")
 
 [node name="Jyura" type="Sprite2D" parent="." unique_id=734007210]
 position = Vector2(802, 327)

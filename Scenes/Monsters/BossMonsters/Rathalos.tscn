@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://coljd5qg1hj1m"]
 
+[ext_resource type="Script" uid="uid://twgmbkkrw4jo" path="res://Scripts/Monsters/BossMonsters/Rathalos.gd" id="1_77jol"]
 [ext_resource type="Texture2D" uid="uid://bbutc3uclgle0" path="res://Sprites/Monsters/BossMonsters/rathalos.jpg" id="1_ttcf7"]
 
 [node name="Rathalos" type="Node2D" unique_id=1850950432]
+script = ExtResource("1_77jol")
 
 [node name="Rathalos" type="Sprite2D" parent="." unique_id=57126415]
 position = Vector2(786, 345)

@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://b81mqboiijpvn"]
 
 [ext_resource type="Texture2D" uid="uid://cwr1hyi1i0gq5" path="res://Sprites/Monsters/SmallMonsters/girros.jpg" id="1_6mta7"]
+[ext_resource type="Script" uid="uid://dn61epla30pw7" path="res://Scripts/Monsters/SmallMonsters/Girros.gd" id="1_8u7wq"]
 
 [node name="Girros" type="Node2D" unique_id=1878300155]
+script = ExtResource("1_8u7wq")
 
 [node name="Girros" type="Sprite2D" parent="." unique_id=1297485193]
 position = Vector2(768, 292)

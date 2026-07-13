@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://1r6vgbyt3l1n"]
 
 [ext_resource type="Texture2D" uid="uid://77pp0xk6mo5o" path="res://Sprites/Monsters/BigMonsters/barroth.jpg" id="1_bomq3"]
+[ext_resource type="Script" uid="uid://dvnc0qkoo4agx" path="res://Scripts/Monsters/BigMonsters/Barroth.gd" id="1_u77dm"]
 
 [node name="Barroth" type="Node2D" unique_id=2146936850]
+script = ExtResource("1_u77dm")
 
 [node name="Barroth" type="Sprite2D" parent="." unique_id=1188156324]
 position = Vector2(797, 368)

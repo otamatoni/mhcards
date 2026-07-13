@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://d26u1f6fob8s6"]
 
+[ext_resource type="Script" uid="uid://coj7p0oe8ss22" path="res://Scripts/Monsters/BigMonsters/Anjanath.gd" id="1_7yxj1"]
 [ext_resource type="Texture2D" uid="uid://dgtv1hc6baal4" path="res://Sprites/Monsters/BigMonsters/anja.png" id="1_qkpqt"]
 
 [node name="Anjanath" type="Node2D" unique_id=153682164]
+script = ExtResource("1_7yxj1")
 
 [node name="Anja" type="Sprite2D" parent="." unique_id=1309382693]
 position = Vector2(844, 374)

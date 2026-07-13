@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://bqjprp1olk3ig"]
 
+[ext_resource type="Script" uid="uid://c4bpkw4phvosy" path="res://Scripts/Monsters/BigMonsters/TobiKadachi.gd" id="1_4004c"]
 [ext_resource type="Texture2D" uid="uid://kc308j881tp" path="res://Sprites/Monsters/BigMonsters/tobi.jpg" id="1_hekm4"]
 
 [node name="TobiKadachi" type="Node2D" unique_id=526079]
+script = ExtResource("1_4004c")
 
 [node name="Tobi" type="Sprite2D" parent="." unique_id=1986933268]
 position = Vector2(819, 356)

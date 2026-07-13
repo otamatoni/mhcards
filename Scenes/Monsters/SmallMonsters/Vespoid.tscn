@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://c78ptp5def8ty"]
 
 [ext_resource type="Texture2D" uid="uid://cmcwcdyxjrbtq" path="res://Sprites/Monsters/SmallMonsters/vespy.jpg" id="1_50b2u"]
+[ext_resource type="Script" uid="uid://dmpodi1lsixg6" path="res://Scripts/Monsters/SmallMonsters/Vespoid.gd" id="1_b41pe"]
 
 [node name="Vespoid" type="Node2D" unique_id=669475458]
+script = ExtResource("1_b41pe")
 
 [node name="Vespy" type="Sprite2D" parent="." unique_id=1364646557]
 position = Vector2(742, 273)
