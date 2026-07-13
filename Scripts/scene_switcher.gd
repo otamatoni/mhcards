@@ -136,7 +136,12 @@ func generate_map() -> void:
 	for i in range(num_layers):
 		row = []
 		for j in range(nodes_per_layer):
-			row.append([randi() % events.size(), 0])
+			# add the event type
+			if PlayerData.region == 4:
+				var everstream_events = [events.CAMP, events.EXPE, events.SMITHY, events.CHEF]
+				row.append([everstream_events.pick_random(), 0])
+			else:
+				row.append([randi() % events.size(), 0])
 		map.append(row)
 	
 	# generate starting nodes
