@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dgausdf240db4"]
+
+[ext_resource type="Texture2D" uid="uid://bv3x83aw31feb" path="res://Sprites/Monsters/BigMonsters/kulu.jpg" id="1_gdeai"]
+
+[node name="KuluYaKu" type="Node2D" unique_id=661968850]
+
+[node name="Kulu" type="Sprite2D" parent="." unique_id=487219161]
+position = Vector2(802, 319)
+texture = ExtResource("1_gdeai")

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cdolxikv2lyhx"]
+
+[ext_resource type="Texture2D" uid="uid://custt7mouymy6" path="res://Sprites/Monsters/BigMonsters/pao.jpg" id="1_vdoxl"]
+
+[node name="Paolumu" type="Node2D" unique_id=1138606794]
+
+[node name="Pao" type="Sprite2D" parent="." unique_id=1642781559]
+position = Vector2(743.00006, 305)
+scale = Vector2(1.8690476, 1.8690476)
+texture = ExtResource("1_vdoxl")

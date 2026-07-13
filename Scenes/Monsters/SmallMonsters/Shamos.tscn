@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cw4qg3k7jnws4"]
+
+[ext_resource type="Texture2D" uid="uid://cmi0qwv78ywtw" path="res://Sprites/Monsters/SmallMonsters/shamos.jpg" id="1_kh4gy"]
+
+[node name="Shamos" type="Node2D" unique_id=77354681]
+
+[node name="Shamos" type="Sprite2D" parent="." unique_id=1619477598]
+position = Vector2(656, 310)
+texture = ExtResource("1_kh4gy")

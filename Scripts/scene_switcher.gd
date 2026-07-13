@@ -86,6 +86,7 @@ func handle_won() -> void:
 func handle_won_boss() -> void:
 	# if player won against zorah
 	if PlayerData.region == 4:
+		PlayerData.region = 0
 		get_tree().change_scene_to_file(PathReferences.win_run_scene)
 		return
 	# otherwise switch region

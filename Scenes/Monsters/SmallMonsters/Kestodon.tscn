@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://wvmsnkjp8lgj"]
+
+[ext_resource type="Texture2D" uid="uid://c38wkb34kj6tr" path="res://Sprites/Monsters/SmallMonsters/kesto.jpg" id="1_gm47y"]
+
+[node name="Kestodon" type="Node2D" unique_id=346690699]
+
+[node name="Kesto" type="Sprite2D" parent="." unique_id=1444767825]
+position = Vector2(734, 315)
+texture = ExtResource("1_gm47y")

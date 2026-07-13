@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dyf6x6qtm7ynv"]
+
+[ext_resource type="Texture2D" uid="uid://c3fox5ot44ab3" path="res://Sprites/404.png" id="1_hrppd"]
+
+[node name="Placeholder" type="Node2D" unique_id=1590482593]
+
+[node name="404" type="Sprite2D" parent="." unique_id=1628243567]
+position = Vector2(572, 331)
+texture = ExtResource("1_hrppd")

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://j3mx7q0koccd"]
+
+[ext_resource type="Texture2D" uid="uid://cqtp8i1t50nyg" path="res://Sprites/Monsters/SmallMonsters/gajalaka.jpg" id="1_drp40"]
+
+[node name="Gajalaka" type="Node2D" unique_id=1556448402]
+
+[node name="Gajalaka" type="Sprite2D" parent="." unique_id=859405451]
+position = Vector2(767, 349)
+scale = Vector2(0.13067059, 0.13067059)
+texture = ExtResource("1_drp40")

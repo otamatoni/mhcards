@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://conjweplydocv"]
+
+[ext_resource type="Texture2D" uid="uid://c3fox5ot44ab3" path="res://Sprites/404.png" id="1_a2maf"]
+
+[node name="Placeholder" type="Node2D" unique_id=839153097]
+
+[node name="404" type="Sprite2D" parent="." unique_id=108596620]
+position = Vector2(579, 315)
+texture = ExtResource("1_a2maf")

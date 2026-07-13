@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b3ktcosykd6es"]
+
+[ext_resource type="Texture2D" uid="uid://b3eyx5javavum" path="res://Sprites/Monsters/BigMonsters/pukei.jpg" id="1_hq1i1"]
+
+[node name="PukeiPukei" type="Node2D" unique_id=362298059]
+
+[node name="Pukei" type="Sprite2D" parent="." unique_id=798500712]
+position = Vector2(728.00006, 379.00003)
+scale = Vector2(2.154762, 2.1547618)
+texture = ExtResource("1_hq1i1")

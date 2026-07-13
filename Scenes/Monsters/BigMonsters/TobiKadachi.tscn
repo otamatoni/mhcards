@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bqjprp1olk3ig"]
+
+[ext_resource type="Texture2D" uid="uid://kc308j881tp" path="res://Sprites/Monsters/BigMonsters/tobi.jpg" id="1_hekm4"]
+
+[node name="TobiKadachi" type="Node2D" unique_id=526079]
+
+[node name="Tobi" type="Sprite2D" parent="." unique_id=1986933268]
+position = Vector2(819, 356)
+scale = Vector2(1.6190476, 1.6190476)
+texture = ExtResource("1_hekm4")

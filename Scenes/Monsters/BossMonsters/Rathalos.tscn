@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://coljd5qg1hj1m"]
+
+[ext_resource type="Texture2D" uid="uid://bbutc3uclgle0" path="res://Sprites/Monsters/BossMonsters/rathalos.jpg" id="1_ttcf7"]
+
+[node name="Rathalos" type="Node2D" unique_id=1850950432]
+
+[node name="Rathalos" type="Sprite2D" parent="." unique_id=57126415]
+position = Vector2(786, 345)
+texture = ExtResource("1_ttcf7")

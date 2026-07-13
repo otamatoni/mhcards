@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ci4te48gqekp2"]
+
+[ext_resource type="Texture2D" uid="uid://cphwp1i1dw35s" path="res://Sprites/Monsters/BigMonsters/ggirros.jpg" id="1_htoht"]
+
+[node name="GreatGirros" type="Node2D" unique_id=1606583222]
+
+[node name="Ggirros" type="Sprite2D" parent="." unique_id=1222047200]
+position = Vector2(720, 345)
+texture = ExtResource("1_htoht")

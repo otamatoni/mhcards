@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://xdwsaq2jvspy"]
+
+[ext_resource type="Texture2D" uid="uid://cq4igwb1hoypn" path="res://Sprites/Monsters/BossMonsters/odo.png" id="1_gnhfi"]
+
+[node name="Odogaron" type="Node2D" unique_id=663769714]
+
+[node name="Odo" type="Sprite2D" parent="." unique_id=1301198243]
+position = Vector2(715, 351)
+texture = ExtResource("1_gnhfi")
