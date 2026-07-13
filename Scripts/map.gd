@@ -2,8 +2,8 @@ extends Control
 
 @export var region_label : Label
 
-var nodes_per_layer = MapVariables.nodes_per_layer # width
-var num_layers = MapVariables.num_layers # height
+var nodes_per_layer # width
+var num_layers # height
 var map = [] # 0 = no node, 1 = valid node, 2 = past node, 3 = selectable node, 4 = past selected node; SHUD MAKE ENUM
 var paths = {}
 var map_gui_positions = []
@@ -13,18 +13,28 @@ signal node_is_up(node_id, node_position)
 
 # draws map with params from SceneSwitcher
 func _ready() -> void:
-	# change text based on region
+	# change text and map dimensions based on region
 	match PlayerData.region:
 		0:
 			region_label.text = 'ancient forest'
+			nodes_per_layer = MapVariables.forest_nodes_per_layer
+			num_layers = MapVariables.forest_num_layers
 		1:
 			region_label.text = 'wildspire wastes'
+			nodes_per_layer = MapVariables.wildspire_nodes_per_layer
+			num_layers = MapVariables.wildspire_num_layers
 		2:
 			region_label.text = 'coral highlands'
+			nodes_per_layer = MapVariables.coral_nodes_per_layer
+			num_layers = MapVariables.coral_num_layers
 		3: 
 			region_label.text = 'rotten vale'
+			nodes_per_layer = MapVariables.vale_nodes_per_layer
+			num_layers = MapVariables.vale_num_layers
 		4:
 			region_label.text = 'everstream'
+			nodes_per_layer = MapVariables.everstream_nodes_per_layer
+			num_layers = MapVariables.everstream_num_layers
 	
 	# initialize map_gui_positions 
 	var row
