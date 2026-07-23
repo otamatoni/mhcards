@@ -1,7 +1,7 @@
 class_name PathReferences
 
 # event scenes
-const battle_event = "res://Scenes/EventScenes/Battle.tscn"
+const battle_event = "res://Scenes/Battle/battle.tscn"
 const camp_event = "res://Scenes/EventScenes/Camp.tscn"
 const chef_event = "res://Scenes/EventScenes/Chef.tscn"
 const expedition_event = "res://Scenes/EventScenes/Expedition.tscn"

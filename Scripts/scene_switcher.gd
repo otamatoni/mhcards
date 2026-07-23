@@ -27,7 +27,7 @@ func handle_node_is_up(node_id, node_position) -> void:
 		events.SMALL_MON:
 			next_scene = preload(PathReferences.battle_event).instantiate()
 			add_child(next_scene)
-			win_button = next_scene.get_node("CanvasLayer/Win")
+			win_button = next_scene.get_node("BattleUI/Win")
 			win_button.button_up.connect(handle_won)
 			next_scene.set_battle_type('small')
 			current_scene.queue_free()
@@ -35,7 +35,7 @@ func handle_node_is_up(node_id, node_position) -> void:
 		events.BIG_MON:
 			next_scene = preload(PathReferences.battle_event).instantiate()
 			add_child(next_scene)
-			win_button = next_scene.get_node("CanvasLayer/Win")
+			win_button = next_scene.get_node("BattleUI/Win")
 			win_button.button_up.connect(handle_won)
 			next_scene.set_battle_type('big')
 			current_scene.queue_free()
@@ -71,7 +71,7 @@ func handle_node_is_up(node_id, node_position) -> void:
 		_: # boss monster
 			next_scene = preload(PathReferences.battle_event).instantiate()
 			add_child(next_scene)
-			win_button = next_scene.get_node("CanvasLayer/Win")
+			win_button = next_scene.get_node("BattleUI/Win")
 			win_button.button_up.connect(handle_won_boss)
 			next_scene.set_battle_type('boss')
 			current_scene.queue_free()

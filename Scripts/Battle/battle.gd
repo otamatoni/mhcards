@@ -1,6 +1,5 @@
 extends Node2D
 
-@export var text : Label
 var battle_type : String
 
 var forest_mons = [GreatJagras, KuluYaKu, PukeiPukei, TobiKadachi, Anjanath, Rathian]
@@ -24,7 +23,6 @@ func _process(delta: float) -> void:
 
 func set_battle_type(type: String) -> void:
 	battle_type = type
-	text.text = 'fight against ' + battle_type + ' monsters!!'
 	match battle_type:
 		'small':
 			fight_small()
