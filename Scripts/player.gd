@@ -1,16 +1,16 @@
-extends Node
+extends Node2D
 
-# determines what region the player is in, from 0-4 (forest, wildspire, coral, vale, everstream)
-var region = 0
-
-var max_hp = 100
-var current_hp = 100
+var hp
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	print('player spawned')
+	hp = PlayerData.current_hp
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
+func take_damage(damage: float) -> void: 
+	hp -= damage
