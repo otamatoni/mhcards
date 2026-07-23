@@ -61,6 +61,7 @@ offset_top = -150.0
 offset_right = 300.0
 grow_horizontal = 2
 grow_vertical = 0
+alignment = 1
 
 [node name="CardUi" parent="BattleUI/Hand" unique_id=1505481105 instance=ExtResource("4_wqxgi")]
 layout_mode = 2

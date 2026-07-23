@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://bsw62q70e13bo"]
 
+[ext_resource type="Script" uid="uid://42u5gsnketa5" path="res://Scenes/card_ui/card_ui.gd" id="1_1egfi"]
 [ext_resource type="Theme" uid="uid://bl2tin3keb185" path="res://main_theme.tres" id="1_l05c3"]
+[ext_resource type="Script" uid="uid://2138xmmlo0rc" path="res://Scenes/card_ui/card_state_machine.gd" id="3_kbcy7"]
+[ext_resource type="Script" uid="uid://duhbh8p5u23m6" path="res://Scenes/card_ui/card_state/card_base_state.gd" id="4_umr1f"]
+[ext_resource type="Script" uid="uid://pgt6i7hsv5cd" path="res://Scenes/card_ui/card_state/card_clicked_state.gd" id="5_rwjlt"]
+[ext_resource type="Script" uid="uid://sgdtoe3h0qwq" path="res://Scenes/card_ui/card_state/card_dragging_state.gd" id="6_xr1ov"]
+[ext_resource type="Script" uid="uid://b5euotxxqy2eu" path="res://Scenes/card_ui/card_state/card_released_state.gd" id="7_aw4yc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ouj1c"]
 size = Vector2(100, 150)
@@ -15,6 +21,7 @@ offset_right = -1052.0
 offset_bottom = -498.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_1egfi")
 
 [node name="Color" type="ColorRect" parent="." unique_id=564176145]
 layout_mode = 1
@@ -43,3 +50,22 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dropDetection" unique_id=122687963]
 position = Vector2(50, 75)
 shape = SubResource("RectangleShape2D_ouj1c")
+
+[node name="CardStateMachine" type="Node" parent="." unique_id=2029865045 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_kbcy7")
+initial_state = NodePath("CardBaseState")
+
+[node name="CardBaseState" type="Node" parent="CardStateMachine" unique_id=110782571]
+script = ExtResource("4_umr1f")
+
+[node name="CardClickedState" type="Node" parent="CardStateMachine" unique_id=692226833]
+script = ExtResource("5_rwjlt")
+state = 1
+
+[node name="CardDraggingState" type="Node" parent="CardStateMachine" unique_id=1257496030]
+script = ExtResource("6_xr1ov")
+state = 2
+
+[node name="CardReleasedState" type="Node" parent="CardStateMachine" unique_id=1392571865]
+script = ExtResource("7_aw4yc")
+state = 4
