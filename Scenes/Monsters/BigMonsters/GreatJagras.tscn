@@ -1434,7 +1434,6 @@ uv = PackedVector2Array(1143.18, 484.199, 988.571, 575.998, 811.414, 629.145, 77
 bones = ["hip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/spine1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/spine1/spine2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/spine1/spine2/right_shoulder", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/spine1/spine2/right_shoulder/chest", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/spine1/spine2/right_shoulder/chest/neck", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/spine1/spine2/right_shoulder/chest/neck/head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/spine1/spine2/right_shoulder/chest/neck/head/nose", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/spine1/spine2/right_shoulder/chest/neck/mouth", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "hip/spine1/spine2/right_shoulder/chest/neck/mouth/chin", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/spine1/spine2/right_shoulder/chest/gullet1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/spine1/spine2/right_shoulder/chest/gullet1/gullet2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/spine1/spine2/right_shoulder/chest/left_shoulder", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/spine1/spine2/right_shoulder/chest/left_shoulder/left_arm", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/spine1/spine2/right_shoulder/chest/left_shoulder/left_arm/left_hand", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/spine1/spine2/right_shoulder/chest/belly1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/spine1/spine2/right_shoulder/chest/belly1/belly2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/spine1/spine2/right_shoulder/chest/belly1/belly2/belly3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/spine1/spine2/right_shoulder/right_arm", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/spine1/spine2/right_shoulder/right_arm/right_hand", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/leg1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/leg1/leg2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/leg1/leg2/foot", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/tail1", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/tail1/tail2", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/tail1/tail2/tail3", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/tail1/tail2/tail3/tail4", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/tail1/tail2/tail3/tail4/tail5", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 
 [node name="Skeleton2D" type="Skeleton2D" parent="." unique_id=1214799209]
-visible = false
 
 [node name="hip" type="Bone2D" parent="Skeleton2D" unique_id=1015340763]
 position = Vector2(251, 363)
@@ -1459,6 +1458,7 @@ rest = Transform2D(1, 0, 0, 1, 15.9092, 90.893)
 
 [node name="chest" type="Bone2D" parent="Skeleton2D/hip/spine1/spine2/right_shoulder" unique_id=1136800417]
 position = Vector2(-127.379, 53.8468)
+scale = Vector2(0.99999994, 0.99999994)
 rest = Transform2D(1, 0, 0, 1, -122.239, 58.5978)
 
 [node name="neck" type="Bone2D" parent="Skeleton2D/hip/spine1/spine2/right_shoulder/chest" unique_id=1412061825]
@@ -1499,6 +1499,7 @@ rest = Transform2D(1, 0, 0, 1, -57.9165, -33.101)
 
 [node name="left_hand" type="Bone2D" parent="Skeleton2D/hip/spine1/spine2/right_shoulder/chest/left_shoulder/left_arm" unique_id=1182973116]
 position = Vector2(-83.2864, -48.3775)
+scale = Vector2(0.99999994, 0.99999994)
 rest = Transform2D(1, 0, 0, 1, -83.2864, -48.3775)
 
 [node name="belly1" type="Bone2D" parent="Skeleton2D/hip/spine1/spine2/right_shoulder/chest" unique_id=1566219416]
@@ -1507,6 +1508,7 @@ rest = Transform2D(1, 0, 0, 1, -79.169, -33.679)
 
 [node name="belly2" type="Bone2D" parent="Skeleton2D/hip/spine1/spine2/right_shoulder/chest/belly1" unique_id=1168452173]
 position = Vector2(-41.9162, -40.1002)
+scale = Vector2(0.99999994, 0.99999994)
 rest = Transform2D(1, 0, 0, 1, -41.9162, -40.1002)
 
 [node name="belly3" type="Bone2D" parent="Skeleton2D/hip/spine1/spine2/right_shoulder/chest/belly1/belly2" unique_id=1437010938]
@@ -1545,10 +1547,12 @@ rest = Transform2D(1, 0, 0, 1, 29.6991, -82.0242)
 
 [node name="tail3" type="Bone2D" parent="Skeleton2D/hip/tail1/tail2" unique_id=247175771]
 position = Vector2(75.6607, -37.4761)
+scale = Vector2(0.99999994, 0.99999994)
 rest = Transform2D(1, 0, 0, 1, 75.6607, -37.4761)
 
 [node name="tail4" type="Bone2D" parent="Skeleton2D/hip/tail1/tail2/tail3" unique_id=1153361628]
 position = Vector2(72.8319, 13.4356)
+scale = Vector2(0.99999994, 0.99999994)
 rest = Transform2D(1, 0, 0, 1, 72.8319, 13.4356)
 
 [node name="tail5" type="Bone2D" parent="Skeleton2D/hip/tail1/tail2/tail3/tail4" unique_id=927835996]

@@ -1,6 +1,6 @@
 extends Node2D
 
-var hp
+var hp = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,3 +14,6 @@ func _process(delta: float) -> void:
 	
 func take_damage(damage: float) -> void: 
 	hp -= damage
+	
+func update_stats() -> void:
+	PlayerData.current_hp = hp
