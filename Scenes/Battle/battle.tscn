@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cbc45rpsooh3a"]
 
+[ext_resource type="Script" uid="uid://m2ykwdffvmfy" path="res://Scripts/Battle/battle.gd" id="1_o8bsx"]
 [ext_resource type="Script" uid="uid://d1nhtnr2sf7ti" path="res://Scripts/ButtonScripts/win.gd" id="1_oxf17"]
 [ext_resource type="Script" uid="uid://u1tokpl701d2" path="res://Scripts/ButtonScripts/lose.gd" id="2_1ruyk"]
 [ext_resource type="Texture2D" uid="uid://dkql83hfex3wj" path="res://art_temp/Placeholders/Background_temp.webp" id="3_aqr0y"]
@@ -9,6 +10,7 @@
 size = Vector2(1152, 216)
 
 [node name="Battle" type="Node2D" unique_id=1994073809]
+script = ExtResource("1_o8bsx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1005471350]
 modulate = Color(0.376471, 0.266667, 0.211765, 1)
