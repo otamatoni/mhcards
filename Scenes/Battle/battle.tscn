@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://d1nhtnr2sf7ti" path="res://Scripts/ButtonScripts/win.gd" id="1_oxf17"]
 [ext_resource type="Script" uid="uid://u1tokpl701d2" path="res://Scripts/ButtonScripts/lose.gd" id="2_1ruyk"]
 [ext_resource type="Texture2D" uid="uid://dkql83hfex3wj" path="res://art_temp/Placeholders/Background_temp.webp" id="3_aqr0y"]
+[ext_resource type="Script" uid="uid://w5878a470mqn" path="res://Scenes/UI/hand.gd" id="3_j1k4e"]
 [ext_resource type="PackedScene" uid="uid://bsw62q70e13bo" path="res://Scenes/card_ui/cardUI.tscn" id="4_wqxgi"]
 [ext_resource type="Texture2D" uid="uid://fan5gxcrrqrt" path="res://Sprites/hunter.jpg" id="6_en5gs"]
 [ext_resource type="Script" uid="uid://chnibagi8eput" path="res://Scripts/player.gd" id="6_vvvpr"]
@@ -22,13 +23,37 @@ texture = ExtResource("3_aqr0y")
 centered = false
 
 [node name="cardDropArea" type="Area2D" parent="." unique_id=1103075407]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cardDropArea" unique_id=828598532]
 light_mask = 2
 position = Vector2(575, 372)
 shape = SubResource("RectangleShape2D_o8bsx")
 
-[node name="BattleUI" type="CanvasLayer" parent="." unique_id=347424718]
+[node name="BattleUI" type="CanvasLayer" parent="." unique_id=347424718 groups=["ui_layer"]]
+
+[node name="Hand" type="HBoxContainer" parent="BattleUI" unique_id=1277490138]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -150.0
+offset_right = 300.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+script = ExtResource("3_j1k4e")
+
+[node name="CardUi" parent="BattleUI/Hand" unique_id=1505481105 instance=ExtResource("4_wqxgi")]
+layout_mode = 2
+
+[node name="CardUi2" parent="BattleUI/Hand" unique_id=1576199836 instance=ExtResource("4_wqxgi")]
+layout_mode = 2
+
+[node name="CardUi3" parent="BattleUI/Hand" unique_id=2146794991 instance=ExtResource("4_wqxgi")]
+layout_mode = 2
 
 [node name="Win" type="Button" parent="BattleUI" unique_id=1322729500]
 offset_left = 320.0
@@ -53,28 +78,6 @@ offset_right = 489.0
 offset_bottom = 118.0
 scale = Vector2(1.535, 1.535)
 text = "fight is happening!!"
-
-[node name="Hand" type="HBoxContainer" parent="BattleUI" unique_id=1277490138]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -300.0
-offset_top = -150.0
-offset_right = 300.0
-grow_horizontal = 2
-grow_vertical = 0
-alignment = 1
-
-[node name="CardUi" parent="BattleUI/Hand" unique_id=1505481105 instance=ExtResource("4_wqxgi")]
-layout_mode = 2
-
-[node name="CardUi2" parent="BattleUI/Hand" unique_id=1576199836 instance=ExtResource("4_wqxgi")]
-layout_mode = 2
-
-[node name="CardUi3" parent="BattleUI/Hand" unique_id=2146794991 instance=ExtResource("4_wqxgi")]
-layout_mode = 2
 
 [node name="Player" type="Node2D" parent="." unique_id=1739231503]
 script = ExtResource("6_vvvpr")
