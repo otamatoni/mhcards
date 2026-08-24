@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://w5878a470mqn" path="res://Scenes/UI/hand.gd" id="3_j1k4e"]
 [ext_resource type="PackedScene" uid="uid://bsw62q70e13bo" path="res://Scenes/card_ui/cardUI.tscn" id="4_wqxgi"]
 [ext_resource type="Texture2D" uid="uid://fan5gxcrrqrt" path="res://Sprites/hunter.jpg" id="6_en5gs"]
-[ext_resource type="Script" uid="uid://chnibagi8eput" path="res://Scripts/player.gd" id="6_vvvpr"]
+[ext_resource type="Script" uid="uid://chnibagi8eput" path="res://Scripts/Player/PlayerBattleData.gd" id="6_vvvpr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o8bsx"]
 size = Vector2(1152, 216)
@@ -83,7 +83,7 @@ text = "fight is happening!!"
 script = ExtResource("6_vvvpr")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1250008288]
-position = Vector2(188.99998, 368)
+position = Vector2(178, 229)
 scale = Vector2(0.42906338, 0.42906335)
 texture = ExtResource("6_en5gs")
 
