@@ -8,7 +8,7 @@ enum blockState {NONE, FULL, HALF}
 @export var max_health := 1
 @export var art: Texture
 
-var health: int set = set_health
+var health: int : set = set_health
 var block: blockState = blockState.NONE : set = set_block
 
 
@@ -20,7 +20,7 @@ func set_block(value: blockState) -> void:
 	block = value
 	stats_changed.emit()
 
-func take_damage(value: int) -> void:
+func take_damage(damage: int) -> void:
 	if damage <= 0 or block == blockState.FULL:
 		return
 	
