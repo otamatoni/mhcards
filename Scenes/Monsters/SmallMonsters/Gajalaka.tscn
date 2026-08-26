@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://j3mx7q0koccd"]
 
-[ext_resource type="Texture2D" uid="uid://cqtp8i1t50nyg" path="res://Sprites/Monsters/SmallMonsters/gajalaka.jpg" id="1_drp40"]
 [ext_resource type="Script" uid="uid://78o2ajjvod5w" path="res://Scripts/Monsters/SmallMonsters/Gajalaka.gd" id="1_rgjgf"]
+[ext_resource type="Texture2D" uid="uid://c07wnt7iag6jm" path="res://Sprites/Monsters/SmallMonsters/Gaja/gaja.png" id="2_rgjgf"]
 
 [node name="Gajalaka" type="Node2D" unique_id=1556448402]
 script = ExtResource("1_rgjgf")
 
-[node name="Gajalaka" type="Sprite2D" parent="." unique_id=859405451]
-position = Vector2(767, 349)
-scale = Vector2(0.13067059, 0.13067059)
-texture = ExtResource("1_drp40")
+[node name="Polygons" type="Node2D" parent="." unique_id=994943980]
+position = Vector2(954, 461)
+scale = Vector2(0.105, 0.105)
+
+[node name="Gajalaka" type="Sprite2D" parent="Polygons" unique_id=973680161]
+position = Vector2(-50, -684)
+texture = ExtResource("2_rgjgf")

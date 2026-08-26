@@ -1,12 +1,30 @@
 [gd_scene format=3 uid="uid://c1l06u0vukyhg"]
 
 [ext_resource type="Script" uid="uid://vj48e48qk8vg" path="res://Scripts/Monsters/BossMonsters/Kirin.gd" id="1_gs17j"]
-[ext_resource type="Texture2D" uid="uid://cqrqi8l1vwnwl" path="res://Sprites/Monsters/BossMonsters/kirin_mlp.png" id="1_ic5d2"]
+[ext_resource type="Texture2D" uid="uid://l8y5qkq1ox5w" path="res://Sprites/Monsters/BossMonsters/KirinParts/leg2.png" id="2_p7ujs"]
+[ext_resource type="Texture2D" uid="uid://cdq18iaf1jqsr" path="res://Sprites/Monsters/BossMonsters/KirinParts/leg1.png" id="3_nyau4"]
+[ext_resource type="Texture2D" uid="uid://c5yrsvqgu1ark" path="res://Sprites/Monsters/BossMonsters/KirinParts/body.png" id="4_mrdqc"]
+[ext_resource type="Texture2D" uid="uid://b7vkr2udkno7t" path="res://Sprites/Monsters/BossMonsters/KirinParts/head.png" id="5_jqnuj"]
 
 [node name="Kirin" type="Node2D" unique_id=1603082391]
 script = ExtResource("1_gs17j")
 
-[node name="KirinMlp" type="Sprite2D" parent="." unique_id=1062558081]
-position = Vector2(793, 379.00003)
-scale = Vector2(0.61001414, 0.6100141)
-texture = ExtResource("1_ic5d2")
+[node name="Polygons" type="Node2D" parent="." unique_id=909662376]
+position = Vector2(807, 485)
+scale = Vector2(0.135, 0.135)
+
+[node name="Leg2" type="Sprite2D" parent="Polygons" unique_id=1849362862]
+position = Vector2(458, -729)
+texture = ExtResource("2_p7ujs")
+
+[node name="Leg1" type="Sprite2D" parent="Polygons" unique_id=786847229]
+position = Vector2(-585, -770)
+texture = ExtResource("3_nyau4")
+
+[node name="Body" type="Sprite2D" parent="Polygons" unique_id=1282172073]
+position = Vector2(440, -1238)
+texture = ExtResource("4_mrdqc")
+
+[node name="Head" type="Sprite2D" parent="Polygons" unique_id=1630278458]
+position = Vector2(-883, -1950)
+texture = ExtResource("5_jqnuj")

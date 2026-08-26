@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://wvmsnkjp8lgj"]
 
-[ext_resource type="Texture2D" uid="uid://c38wkb34kj6tr" path="res://Sprites/Monsters/SmallMonsters/kesto.jpg" id="1_gm47y"]
 [ext_resource type="Script" uid="uid://cv6x06vq6f0uc" path="res://Scripts/Monsters/SmallMonsters/Kestodon.gd" id="1_h8dhk"]
+[ext_resource type="Texture2D" uid="uid://dl4f64g1ivgd8" path="res://Sprites/Monsters/SmallMonsters/Kesto/kesto.png" id="2_h8dhk"]
 
 [node name="Kestodon" type="Node2D" unique_id=346690699]
 script = ExtResource("1_h8dhk")
 
-[node name="Kesto" type="Sprite2D" parent="." unique_id=1444767825]
-position = Vector2(734, 315)
-texture = ExtResource("1_gm47y")
+[node name="Polygons" type="Node2D" parent="." unique_id=1364830389]
+position = Vector2(928.00006, 457.00003)
+scale = Vector2(0.17, 0.17)
+
+[node name="Kesto" type="Sprite2D" parent="Polygons" unique_id=1444767825]
+position = Vector2(-1, -517)
+texture = ExtResource("2_h8dhk")

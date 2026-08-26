@@ -1,12 +1,34 @@
 [gd_scene format=3 uid="uid://bvgxkrbnbf66y"]
 
 [ext_resource type="Script" uid="uid://b13mkvyn45xbm" path="res://Scripts/Monsters/BigMonsters/Legiana.gd" id="1_wu2ge"]
-[ext_resource type="Texture2D" uid="uid://ekd6ryfgxsew" path="res://Sprites/Monsters/BigMonsters/legiana.jpg" id="1_x2cnp"]
+[ext_resource type="Texture2D" uid="uid://d36kqryiyt4te" path="res://Sprites/Monsters/BigMonsters/LegiParts/wing1.png" id="2_vg344"]
+[ext_resource type="Texture2D" uid="uid://bmrcqwskmh12x" path="res://Sprites/Monsters/BigMonsters/LegiParts/wing2.png" id="3_dturv"]
+[ext_resource type="Texture2D" uid="uid://b5c0yw8askveh" path="res://Sprites/Monsters/BigMonsters/LegiParts/body.png" id="4_0p4yr"]
+[ext_resource type="Texture2D" uid="uid://dbytit4qerhvb" path="res://Sprites/Monsters/BigMonsters/LegiParts/tail.png" id="5_s2mps"]
+[ext_resource type="Texture2D" uid="uid://vl1u6x15qeg3" path="res://Sprites/Monsters/BigMonsters/LegiParts/head.png" id="6_4pgyx"]
 
 [node name="Legiana" type="Node2D" unique_id=1798106792]
 script = ExtResource("1_wu2ge")
 
-[node name="Legiana" type="Sprite2D" parent="." unique_id=1439817654]
-position = Vector2(779, 324.99997)
-scale = Vector2(1.7651932, 1.7651933)
-texture = ExtResource("1_x2cnp")
+[node name="Polygons" type="Node2D" parent="." unique_id=1923109815]
+position = Vector2(835, 401.00003)
+scale = Vector2(0.21, 0.21)
+
+[node name="Wing1" type="Sprite2D" parent="Polygons" unique_id=387040914]
+position = Vector2(-1211, -757)
+texture = ExtResource("2_vg344")
+
+[node name="Wing2" type="Sprite2D" parent="Polygons" unique_id=1668097419]
+position = Vector2(1202, -813)
+texture = ExtResource("3_dturv")
+
+[node name="Body" type="Sprite2D" parent="Polygons" unique_id=1957576035]
+texture = ExtResource("4_0p4yr")
+
+[node name="Tail" type="Sprite2D" parent="Polygons" unique_id=361967927]
+position = Vector2(654, 493)
+texture = ExtResource("5_s2mps")
+
+[node name="Head" type="Sprite2D" parent="Polygons" unique_id=1203705591]
+position = Vector2(-38, -988)
+texture = ExtResource("6_4pgyx")

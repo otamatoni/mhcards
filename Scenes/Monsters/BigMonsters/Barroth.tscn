@@ -1,11 +1,45 @@
 [gd_scene format=3 uid="uid://1r6vgbyt3l1n"]
 
-[ext_resource type="Texture2D" uid="uid://77pp0xk6mo5o" path="res://Sprites/Monsters/BigMonsters/barroth.jpg" id="1_bomq3"]
 [ext_resource type="Script" uid="uid://dvnc0qkoo4agx" path="res://Scripts/Monsters/BigMonsters/Barroth.gd" id="1_u77dm"]
+[ext_resource type="Texture2D" uid="uid://dfuxc0v2m4eok" path="res://Sprites/Monsters/BigMonsters/BarrothParts/tail.png" id="2_5b227"]
+[ext_resource type="Texture2D" uid="uid://dvfi5u2fh4cg1" path="res://Sprites/Monsters/BigMonsters/BarrothParts/leg1.png" id="3_n43qw"]
+[ext_resource type="Texture2D" uid="uid://g1pt51qngyrf" path="res://Sprites/Monsters/BigMonsters/BarrothParts/arm1.png" id="4_21u8u"]
+[ext_resource type="Texture2D" uid="uid://b337rvqkmqa5y" path="res://Sprites/Monsters/BigMonsters/BarrothParts/body.png" id="5_2xr7v"]
+[ext_resource type="Texture2D" uid="uid://ca6404kvju71q" path="res://Sprites/Monsters/BigMonsters/BarrothParts/arm2.png" id="6_srn7e"]
+[ext_resource type="Texture2D" uid="uid://bp5hj1cf8cbtx" path="res://Sprites/Monsters/BigMonsters/BarrothParts/leg2.png" id="7_ykgbc"]
+[ext_resource type="Texture2D" uid="uid://6mwtcf1o4bb0" path="res://Sprites/Monsters/BigMonsters/BarrothParts/head.png" id="8_hvv21"]
 
 [node name="Barroth" type="Node2D" unique_id=2146936850]
 script = ExtResource("1_u77dm")
 
-[node name="Barroth" type="Sprite2D" parent="." unique_id=1188156324]
-position = Vector2(797, 368)
-texture = ExtResource("1_bomq3")
+[node name="Polygons" type="Node2D" parent="." unique_id=1267947815]
+position = Vector2(866, 451)
+scale = Vector2(0.2, 0.2)
+
+[node name="Tail" type="Sprite2D" parent="Polygons" unique_id=880633940]
+position = Vector2(896.0001, -1121.3334)
+texture = ExtResource("2_5b227")
+
+[node name="BackLeg" type="Sprite2D" parent="Polygons" unique_id=271191373]
+position = Vector2(-679, -511.33337)
+texture = ExtResource("3_n43qw")
+
+[node name="BackArm" type="Sprite2D" parent="Polygons" unique_id=310558420]
+position = Vector2(-399.00012, -581.3334)
+texture = ExtResource("4_21u8u")
+
+[node name="Body" type="Sprite2D" parent="Polygons" unique_id=1110524451]
+position = Vector2(-89.36212, -1286.4996)
+texture = ExtResource("5_2xr7v")
+
+[node name="FrontArm" type="Sprite2D" parent="Polygons" unique_id=1896117542]
+position = Vector2(-9, -706.3334)
+texture = ExtResource("6_srn7e")
+
+[node name="FrontLeg" type="Sprite2D" parent="Polygons" unique_id=579520179]
+position = Vector2(626, -491.33337)
+texture = ExtResource("7_ykgbc")
+
+[node name="Head" type="Sprite2D" parent="Polygons" unique_id=218233294]
+position = Vector2(-838.9999, -1091.3334)
+texture = ExtResource("8_hvv21")

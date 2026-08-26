@@ -1,11 +1,30 @@
 [gd_scene format=3 uid="uid://doklnuive5xsj"]
 
-[ext_resource type="Texture2D" uid="uid://dkseqw4vm6lwy" path="res://Sprites/Monsters/BigMonsters/rado.jpg" id="1_5tdgb"]
 [ext_resource type="Script" uid="uid://m6sqkjgo2jwa" path="res://Scripts/Monsters/BigMonsters/Radobaan.gd" id="1_v35as"]
+[ext_resource type="Texture2D" uid="uid://cd5xajubnm2c0" path="res://Sprites/Monsters/BigMonsters/RadoParts/body.png" id="2_2ilrp"]
+[ext_resource type="Texture2D" uid="uid://dqdnnx841qlx3" path="res://Sprites/Monsters/BigMonsters/RadoParts/head.png" id="3_hve8b"]
+[ext_resource type="Texture2D" uid="uid://be3fj7ycay3n4" path="res://Sprites/Monsters/BigMonsters/RadoParts/leg.png" id="4_ib3d6"]
+[ext_resource type="Texture2D" uid="uid://rwjf4tnuqc6s" path="res://Sprites/Monsters/BigMonsters/RadoParts/tail.png" id="5_e13jn"]
 
 [node name="Radobaan" type="Node2D" unique_id=1890060853]
 script = ExtResource("1_v35as")
 
-[node name="Rado" type="Sprite2D" parent="." unique_id=664417833]
-position = Vector2(739, 336)
-texture = ExtResource("1_5tdgb")
+[node name="Polygons" type="Node2D" parent="." unique_id=1019041173]
+position = Vector2(836.99994, 510)
+scale = Vector2(0.215, 0.215)
+
+[node name="Body" type="Sprite2D" parent="Polygons" unique_id=1947179068]
+position = Vector2(151.00012, -1464.9999)
+texture = ExtResource("2_2ilrp")
+
+[node name="Head" type="Sprite2D" parent="Polygons" unique_id=1310584931]
+position = Vector2(-996.9999, -1047.9999)
+texture = ExtResource("3_hve8b")
+
+[node name="Leg" type="Sprite2D" parent="Polygons" unique_id=1566575985]
+position = Vector2(261.00012, -580.9999)
+texture = ExtResource("4_ib3d6")
+
+[node name="Tail" type="Sprite2D" parent="Polygons" unique_id=1041832811]
+position = Vector2(224.00012, -610.9999)
+texture = ExtResource("5_e13jn")

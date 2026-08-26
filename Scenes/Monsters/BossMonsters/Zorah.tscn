@@ -1,11 +1,40 @@
 [gd_scene format=3 uid="uid://y5w4yxakgfib"]
 
 [ext_resource type="Script" uid="uid://dl08xl714t1gu" path="res://Scripts/Monsters/BossMonsters/Zorah.gd" id="1_5dg5g"]
-[ext_resource type="Texture2D" uid="uid://ce34t7ysaw3cw" path="res://Sprites/Monsters/BossMonsters/zorah.png" id="1_n7pda"]
+[ext_resource type="Texture2D" uid="uid://5v26a77p4x76" path="res://Sprites/Monsters/BossMonsters/ZorahParts/side.png" id="2_jm8yc"]
+[ext_resource type="Texture2D" uid="uid://cabq0jomq3mhm" path="res://Sprites/Monsters/BossMonsters/ZorahParts/arm2.png" id="3_urgym"]
+[ext_resource type="Texture2D" uid="uid://djoukbsnjeyy1" path="res://Sprites/Monsters/BossMonsters/ZorahParts/body.png" id="4_eoy7q"]
+[ext_resource type="Texture2D" uid="uid://b6i8hgxstt128" path="res://Sprites/Monsters/BossMonsters/ZorahParts/head.png" id="5_adyu4"]
+[ext_resource type="Texture2D" uid="uid://bxfjjubl1s0bl" path="res://Sprites/Monsters/BossMonsters/ZorahParts/jaw.png" id="6_3mcja"]
+[ext_resource type="Texture2D" uid="uid://dyc0cx3vk6kc4" path="res://Sprites/Monsters/BossMonsters/ZorahParts/arm1.png" id="7_lknu6"]
 
 [node name="Zorah" type="Node2D" unique_id=784800740]
 script = ExtResource("1_5dg5g")
 
-[node name="Zorah" type="Sprite2D" parent="." unique_id=1949714696]
-position = Vector2(734, 324)
-texture = ExtResource("1_n7pda")
+[node name="Polygons" type="Node2D" parent="." unique_id=1161201402]
+position = Vector2(875, 651)
+scale = Vector2(0.26, 0.26)
+
+[node name="Side" type="Sprite2D" parent="Polygons" unique_id=550957404]
+position = Vector2(-1505, -943.5)
+texture = ExtResource("2_jm8yc")
+
+[node name="Arm2" type="Sprite2D" parent="Polygons" unique_id=1522364373]
+position = Vector2(-1177, -1236.5)
+texture = ExtResource("3_urgym")
+
+[node name="Body" type="Sprite2D" parent="Polygons" unique_id=1592340358]
+position = Vector2(537, -1423.5)
+texture = ExtResource("4_eoy7q")
+
+[node name="Head" type="Sprite2D" parent="Polygons" unique_id=545693481]
+position = Vector2(-1279, -1869.5)
+texture = ExtResource("5_adyu4")
+
+[node name="Jaw" type="Sprite2D" parent="Polygons" unique_id=1313713885]
+position = Vector2(-1932, -692.5)
+texture = ExtResource("6_3mcja")
+
+[node name="Arm1" type="Sprite2D" parent="Polygons" unique_id=1099255634]
+position = Vector2(-440, -993.5)
+texture = ExtResource("7_lknu6")

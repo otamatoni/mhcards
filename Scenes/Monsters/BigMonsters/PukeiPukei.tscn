@@ -1,12 +1,45 @@
 [gd_scene format=3 uid="uid://b3ktcosykd6es"]
 
-[ext_resource type="Texture2D" uid="uid://b3eyx5javavum" path="res://Sprites/Monsters/BigMonsters/pukei.jpg" id="1_hq1i1"]
 [ext_resource type="Script" uid="uid://fkyxkipl8dmg" path="res://Scripts/Monsters/BigMonsters/PukeiPukei.gd" id="1_v4veb"]
+[ext_resource type="Texture2D" uid="uid://b70yaspu300i3" path="res://Sprites/Monsters/BigMonsters/PukeiParts/leg2.png" id="2_la7mu"]
+[ext_resource type="Texture2D" uid="uid://5u3qdy150jix" path="res://Sprites/Monsters/BigMonsters/PukeiParts/body.png" id="3_uh1ke"]
+[ext_resource type="Texture2D" uid="uid://due3jrhxdybk" path="res://Sprites/Monsters/BigMonsters/PukeiParts/leg1.png" id="4_uchmm"]
+[ext_resource type="Texture2D" uid="uid://u67c7ay0ffae" path="res://Sprites/Monsters/BigMonsters/PukeiParts/tail.png" id="5_wesko"]
+[ext_resource type="Texture2D" uid="uid://cpaiu1fyy70rc" path="res://Sprites/Monsters/BigMonsters/PukeiParts/wing2.png" id="6_q703b"]
+[ext_resource type="Texture2D" uid="uid://i5ro0vh4d4gh" path="res://Sprites/Monsters/BigMonsters/PukeiParts/wing1.png" id="7_2ml31"]
+[ext_resource type="Texture2D" uid="uid://cxe4ofsk7g8q1" path="res://Sprites/Monsters/BigMonsters/PukeiParts/head.png" id="8_o0k2e"]
 
 [node name="PukeiPukei" type="Node2D" unique_id=362298059]
 script = ExtResource("1_v4veb")
 
-[node name="Pukei" type="Sprite2D" parent="." unique_id=798500712]
-position = Vector2(728.00006, 379.00003)
-scale = Vector2(2.154762, 2.1547618)
-texture = ExtResource("1_hq1i1")
+[node name="Polygons" type="Node2D" parent="." unique_id=255299008]
+position = Vector2(781.00006, 470)
+scale = Vector2(0.245, 0.245)
+
+[node name="Leg2" type="Sprite2D" parent="Polygons" unique_id=612712702]
+position = Vector2(-331, -213.5)
+texture = ExtResource("2_la7mu")
+
+[node name="Body" type="Sprite2D" parent="Polygons" unique_id=1897379332]
+position = Vector2(84, -659.5)
+texture = ExtResource("3_uh1ke")
+
+[node name="Leg1" type="Sprite2D" parent="Polygons" unique_id=382382140]
+position = Vector2(321, -270.5)
+texture = ExtResource("4_uchmm")
+
+[node name="Tail" type="Sprite2D" parent="Polygons" unique_id=1596944703]
+position = Vector2(337, -1208.5)
+texture = ExtResource("5_wesko")
+
+[node name="Wing2" type="Sprite2D" parent="Polygons" unique_id=1373446861]
+position = Vector2(717, -721.5)
+texture = ExtResource("6_q703b")
+
+[node name="Wing1" type="Sprite2D" parent="Polygons" unique_id=1841879135]
+position = Vector2(-513, -859.5)
+texture = ExtResource("7_2ml31")
+
+[node name="Head" type="Sprite2D" parent="Polygons" unique_id=1978826179]
+position = Vector2(-358, -397.5)
+texture = ExtResource("8_o0k2e")

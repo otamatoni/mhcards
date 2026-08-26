@@ -1,11 +1,45 @@
 [gd_scene format=3 uid="uid://xdwsaq2jvspy"]
 
 [ext_resource type="Script" uid="uid://taqwfqfh8fbi" path="res://Scripts/Monsters/BossMonsters/Odogaron.gd" id="1_f1qrk"]
-[ext_resource type="Texture2D" uid="uid://cq4igwb1hoypn" path="res://Sprites/Monsters/BossMonsters/odo.png" id="1_gnhfi"]
+[ext_resource type="Texture2D" uid="uid://cbxcbxrabun1o" path="res://Sprites/Monsters/BossMonsters/OdoParts/leg4.png" id="2_jhy20"]
+[ext_resource type="Texture2D" uid="uid://2ayt3iri82kw" path="res://Sprites/Monsters/BossMonsters/OdoParts/leg2.png" id="3_qwlgt"]
+[ext_resource type="Texture2D" uid="uid://og72ww61fwga" path="res://Sprites/Monsters/BossMonsters/OdoParts/body.png" id="4_0n5lh"]
+[ext_resource type="Texture2D" uid="uid://dmvfve0hjyjho" path="res://Sprites/Monsters/BossMonsters/OdoParts/head.png" id="5_bnna8"]
+[ext_resource type="Texture2D" uid="uid://dgyq8mpckljyl" path="res://Sprites/Monsters/BossMonsters/OdoParts/leg1.png" id="6_jep4f"]
+[ext_resource type="Texture2D" uid="uid://d4k2ctme4f2wo" path="res://Sprites/Monsters/BossMonsters/OdoParts/leg3.png" id="7_kkbmg"]
+[ext_resource type="Texture2D" uid="uid://vbe5t6dmdi7d" path="res://Sprites/Monsters/BossMonsters/OdoParts/tail.png" id="8_8ili3"]
 
 [node name="Odogaron" type="Node2D" unique_id=663769714]
 script = ExtResource("1_f1qrk")
 
-[node name="Odo" type="Sprite2D" parent="." unique_id=1301198243]
-position = Vector2(715, 351)
-texture = ExtResource("1_gnhfi")
+[node name="Polygons" type="Node2D" parent="." unique_id=1429378004]
+position = Vector2(844, 500)
+scale = Vector2(0.155, 0.155)
+
+[node name="Leg4" type="Sprite2D" parent="Polygons" unique_id=717826219]
+position = Vector2(-50, -418.5)
+texture = ExtResource("2_jhy20")
+
+[node name="Leg2" type="Sprite2D" parent="Polygons" unique_id=397320442]
+position = Vector2(1157, -533.5)
+texture = ExtResource("3_qwlgt")
+
+[node name="Body" type="Sprite2D" parent="Polygons" unique_id=620952502]
+position = Vector2(-336, -1082.5)
+texture = ExtResource("4_0n5lh")
+
+[node name="Head" type="Sprite2D" parent="Polygons" unique_id=1257075913]
+position = Vector2(670, -687.5)
+texture = ExtResource("5_bnna8")
+
+[node name="Leg1" type="Sprite2D" parent="Polygons" unique_id=1770673826]
+position = Vector2(-58, -550.5)
+texture = ExtResource("6_jep4f")
+
+[node name="Leg3" type="Sprite2D" parent="Polygons" unique_id=1208827334]
+position = Vector2(-1012, -545.5)
+texture = ExtResource("7_kkbmg")
+
+[node name="Tail" type="Sprite2D" parent="Polygons" unique_id=135130719]
+position = Vector2(-567, -1941.5)
+texture = ExtResource("8_8ili3")

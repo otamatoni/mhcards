@@ -1,11 +1,26 @@
 [gd_scene format=3 uid="uid://ci4te48gqekp2"]
 
-[ext_resource type="Texture2D" uid="uid://cphwp1i1dw35s" path="res://Sprites/Monsters/BigMonsters/ggirros.jpg" id="1_htoht"]
 [ext_resource type="Script" uid="uid://4in84aa3hjlp" path="res://Scripts/Monsters/BigMonsters/GreatGirros.gd" id="1_jsatu"]
+[ext_resource type="Texture2D" uid="uid://cpbvw8w12vj68" path="res://Sprites/Monsters/BigMonsters/GGirrosParts/body.png" id="2_7k1yy"]
+[ext_resource type="Texture2D" uid="uid://bmapcvfkm0ukx" path="res://Sprites/Monsters/BigMonsters/GGirrosParts/tail.png" id="3_mxwg6"]
+[ext_resource type="Texture2D" uid="uid://b2ijlkx2kth02" path="res://Sprites/Monsters/BigMonsters/GGirrosParts/head.png" id="4_dnkgn"]
 
 [node name="GreatGirros" type="Node2D" unique_id=1606583222]
 script = ExtResource("1_jsatu")
 
-[node name="Ggirros" type="Sprite2D" parent="." unique_id=1222047200]
-position = Vector2(720, 345)
-texture = ExtResource("1_htoht")
+[node name="Polygons" type="Node2D" parent="." unique_id=1082516240]
+position = Vector2(865, 447.99997)
+scale = Vector2(0.2, 0.2)
+
+[node name="Body" type="Sprite2D" parent="Polygons" unique_id=548496625]
+position = Vector2(-68.49995, -418.49988)
+texture = ExtResource("2_7k1yy")
+
+[node name="Tail" type="Sprite2D" parent="Polygons" unique_id=148571910]
+position = Vector2(758.5, -1025.4999)
+texture = ExtResource("3_mxwg6")
+
+[node name="Head" type="Sprite2D" parent="Polygons" unique_id=802908782]
+position = Vector2(-676.49994, -995.5)
+scale = Vector2(0.9999998, 0.9999998)
+texture = ExtResource("4_dnkgn")

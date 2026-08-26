@@ -1,12 +1,25 @@
 [gd_scene format=3 uid="uid://co6k00jxb8nm4"]
 
 [ext_resource type="Script" uid="uid://c7q51kif4g1s3" path="res://Scripts/Monsters/BigMonsters/TzitziYaKu.gd" id="1_tsv7k"]
-[ext_resource type="Texture2D" uid="uid://1ppej5swb6qm" path="res://Sprites/Monsters/BigMonsters/tzi.jpg" id="1_tv1vg"]
+[ext_resource type="Texture2D" uid="uid://bsgsr2id3g8nc" path="res://Sprites/Monsters/BigMonsters/TziParts/body.png" id="2_o2nyq"]
+[ext_resource type="Texture2D" uid="uid://do1yt33akvqf" path="res://Sprites/Monsters/BigMonsters/TziParts/hand.png" id="3_ta76q"]
+[ext_resource type="Texture2D" uid="uid://dphkgo1i0bgj0" path="res://Sprites/Monsters/BigMonsters/TziParts/head.png" id="4_neir5"]
 
 [node name="TzitziYaKu" type="Node2D" unique_id=1358415368]
 script = ExtResource("1_tsv7k")
 
-[node name="Tzi" type="Sprite2D" parent="." unique_id=243647260]
-position = Vector2(811, 363)
-scale = Vector2(1.4221556, 1.4221557)
-texture = ExtResource("1_tv1vg")
+[node name="Polygons" type="Node2D" parent="." unique_id=1921724355]
+position = Vector2(867, 481)
+scale = Vector2(0.175, 0.175)
+
+[node name="Body" type="Sprite2D" parent="Polygons" unique_id=149988958]
+position = Vector2(85.643074, -724.09515)
+texture = ExtResource("2_o2nyq")
+
+[node name="Hand" type="Sprite2D" parent="Polygons" unique_id=101660346]
+position = Vector2(-309.35693, -666.09515)
+texture = ExtResource("3_ta76q")
+
+[node name="Head" type="Sprite2D" parent="Polygons" unique_id=845368203]
+position = Vector2(64.643074, -1691.0952)
+texture = ExtResource("4_neir5")

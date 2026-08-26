@@ -1,12 +1,45 @@
 [gd_scene format=3 uid="uid://di5u2yhlc118l"]
 
-[ext_resource type="Texture2D" uid="uid://6t4nmveamjbs" path="res://Sprites/Monsters/BossMonsters/cactus_eater.jpg" id="1_2alns"]
 [ext_resource type="Script" uid="uid://8rwbhgf8ngxt" path="res://Scripts/Monsters/BossMonsters/Diablos.gd" id="1_dtjf2"]
+[ext_resource type="Texture2D" uid="uid://dnnh72kwmpnd4" path="res://Sprites/Monsters/BossMonsters/DiablosParts/leg1.png" id="2_2trdo"]
+[ext_resource type="Texture2D" uid="uid://d3t6hhot73wc8" path="res://Sprites/Monsters/BossMonsters/DiablosParts/wing1.png" id="3_55j3c"]
+[ext_resource type="Texture2D" uid="uid://clduvktcy8xe0" path="res://Sprites/Monsters/BossMonsters/DiablosParts/body.png" id="4_irrwr"]
+[ext_resource type="Texture2D" uid="uid://dyg5sb8pyorox" path="res://Sprites/Monsters/BossMonsters/DiablosParts/head.png" id="5_nyxwl"]
+[ext_resource type="Texture2D" uid="uid://d2127orcrelnb" path="res://Sprites/Monsters/BossMonsters/DiablosParts/leg2.png" id="6_bvlx7"]
+[ext_resource type="Texture2D" uid="uid://bfovwdx5oc5vm" path="res://Sprites/Monsters/BossMonsters/DiablosParts/tail.png" id="7_4v77v"]
+[ext_resource type="Texture2D" uid="uid://kwxyp2ly3arf" path="res://Sprites/Monsters/BossMonsters/DiablosParts/wing2.png" id="8_tljev"]
 
 [node name="Diablos" type="Node2D" unique_id=1198385740]
 script = ExtResource("1_dtjf2")
 
-[node name="CactusEater" type="Sprite2D" parent="." unique_id=2086115643]
-position = Vector2(755, 316.99997)
-scale = Vector2(1.75, 1.75)
-texture = ExtResource("1_2alns")
+[node name="Polygons" type="Node2D" parent="." unique_id=1032103485]
+position = Vector2(760, 516)
+scale = Vector2(0.205, 0.205)
+
+[node name="Leg1" type="Sprite2D" parent="Polygons" unique_id=194582560]
+position = Vector2(-426, -562)
+texture = ExtResource("2_2trdo")
+
+[node name="Wing1" type="Sprite2D" parent="Polygons" unique_id=154081111]
+position = Vector2(-765, -2330)
+texture = ExtResource("3_55j3c")
+
+[node name="Body" type="Sprite2D" parent="Polygons" unique_id=1849254197]
+position = Vector2(247, -968)
+texture = ExtResource("4_irrwr")
+
+[node name="Head" type="Sprite2D" parent="Polygons" unique_id=1808570613]
+position = Vector2(-1110, -687)
+texture = ExtResource("5_nyxwl")
+
+[node name="Leg2" type="Sprite2D" parent="Polygons" unique_id=1967850813]
+position = Vector2(345, -518)
+texture = ExtResource("6_bvlx7")
+
+[node name="Tail" type="Sprite2D" parent="Polygons" unique_id=1306371562]
+position = Vector2(1515, -896)
+texture = ExtResource("7_4v77v")
+
+[node name="Wing2" type="Sprite2D" parent="Polygons" unique_id=439641235]
+position = Vector2(875, -2137)
+texture = ExtResource("8_tljev")

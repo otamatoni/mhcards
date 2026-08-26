@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://cw4qg3k7jnws4"]
 
-[ext_resource type="Texture2D" uid="uid://cmi0qwv78ywtw" path="res://Sprites/Monsters/SmallMonsters/shamos.jpg" id="1_kh4gy"]
 [ext_resource type="Script" uid="uid://cpcrodkd4f36i" path="res://Scripts/Monsters/SmallMonsters/Shamos.gd" id="1_stqrf"]
+[ext_resource type="Texture2D" uid="uid://dnn2bvs1gqw6k" path="res://Sprites/Monsters/SmallMonsters/Shamos/shamos.png" id="2_stqrf"]
 
 [node name="Shamos" type="Node2D" unique_id=77354681]
 script = ExtResource("1_stqrf")
 
-[node name="Shamos" type="Sprite2D" parent="." unique_id=1619477598]
-position = Vector2(656, 310)
-texture = ExtResource("1_kh4gy")
+[node name="Polygons" type="Node2D" parent="." unique_id=595359345]
+position = Vector2(914, 446)
+scale = Vector2(0.175, 0.175)
+
+[node name="Shamos" type="Sprite2D" parent="Polygons" unique_id=1619477598]
+position = Vector2(49, -471)
+texture = ExtResource("2_stqrf")

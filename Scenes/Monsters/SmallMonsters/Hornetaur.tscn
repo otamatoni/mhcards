@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://7bmi716csbbe"]
 
 [ext_resource type="Script" uid="uid://c6b2oeowkqkyy" path="res://Scripts/Monsters/SmallMonsters/Hornetaur.gd" id="1_3f2ts"]
-[ext_resource type="Texture2D" uid="uid://cnnbypva5fdcl" path="res://Sprites/Monsters/SmallMonsters/horny.png" id="1_fnka3"]
+[ext_resource type="Texture2D" uid="uid://buc2cxjxpdpmp" path="res://Sprites/Monsters/SmallMonsters/Horn/horny.png" id="2_3f2ts"]
 
 [node name="Hornetaur" type="Node2D" unique_id=947488652]
 script = ExtResource("1_3f2ts")
 
-[node name="Horny" type="Sprite2D" parent="." unique_id=209275583]
-position = Vector2(753, 283)
-texture = ExtResource("1_fnka3")
+[node name="Polygons" type="Node2D" parent="." unique_id=1278653096]
+position = Vector2(938.99994, 377.99994)
+scale = Vector2(0.145, 0.145)
+
+[node name="Horny" type="Sprite2D" parent="Polygons" unique_id=209275583]
+position = Vector2(-7, -246)
+texture = ExtResource("2_3f2ts")

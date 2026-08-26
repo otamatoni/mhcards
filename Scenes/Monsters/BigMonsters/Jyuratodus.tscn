@@ -1,11 +1,45 @@
 [gd_scene format=3 uid="uid://b4pyhwtpbnud8"]
 
 [ext_resource type="Script" uid="uid://mavgeiumimr5" path="res://Scripts/Monsters/BigMonsters/Jyuratodus.gd" id="1_5356d"]
-[ext_resource type="Texture2D" uid="uid://dtorjsjaumt3r" path="res://Sprites/Monsters/BigMonsters/jyura.jpg" id="1_vrpo5"]
+[ext_resource type="Texture2D" uid="uid://betsg7noy87i5" path="res://Sprites/Monsters/BigMonsters/JyuraParts/fin1.png" id="2_s1fyk"]
+[ext_resource type="Texture2D" uid="uid://dydossqkdrnql" path="res://Sprites/Monsters/BigMonsters/JyuraParts/leg1.png" id="3_3wv4q"]
+[ext_resource type="Texture2D" uid="uid://gm1ocn12uvyi" path="res://Sprites/Monsters/BigMonsters/JyuraParts/body.png" id="4_n5fqu"]
+[ext_resource type="Texture2D" uid="uid://dc5uf3mbb6spj" path="res://Sprites/Monsters/BigMonsters/JyuraParts/tail.png" id="5_mmq87"]
+[ext_resource type="Texture2D" uid="uid://bmm5cvvib380r" path="res://Sprites/Monsters/BigMonsters/JyuraParts/head.png" id="6_6b6yh"]
+[ext_resource type="Texture2D" uid="uid://d0a6py6oino1j" path="res://Sprites/Monsters/BigMonsters/JyuraParts/leg2.png" id="7_f8mf5"]
+[ext_resource type="Texture2D" uid="uid://ct28ojxo26vwf" path="res://Sprites/Monsters/BigMonsters/JyuraParts/fin2.png" id="8_sbdf1"]
 
 [node name="Jyuratodus" type="Node2D" unique_id=1937558198]
 script = ExtResource("1_5356d")
 
-[node name="Jyura" type="Sprite2D" parent="." unique_id=734007210]
-position = Vector2(802, 327)
-texture = ExtResource("1_vrpo5")
+[node name="Polygons" type="Node2D" parent="." unique_id=2011685728]
+position = Vector2(831.99994, 443)
+scale = Vector2(0.22, 0.22)
+
+[node name="Fin1" type="Sprite2D" parent="Polygons" unique_id=1468001015]
+position = Vector2(-807.68176, -1146.1364)
+texture = ExtResource("2_s1fyk")
+
+[node name="Leg1" type="Sprite2D" parent="Polygons" unique_id=907352100]
+position = Vector2(-448.59076, -268.86353)
+texture = ExtResource("3_3wv4q")
+
+[node name="Body" type="Sprite2D" parent="Polygons" unique_id=1186661998]
+position = Vector2(-153.13637, -818.8636)
+texture = ExtResource("4_n5fqu")
+
+[node name="Tail" type="Sprite2D" parent="Polygons" unique_id=1084625023]
+position = Vector2(933.2273, -541.5908)
+texture = ExtResource("5_mmq87")
+
+[node name="Head" type="Sprite2D" parent="Polygons" unique_id=2145798106]
+position = Vector2(-1112.2272, -468.86365)
+texture = ExtResource("6_6b6yh")
+
+[node name="Leg2" type="Sprite2D" parent="Polygons" unique_id=1433897042]
+position = Vector2(255.95451, -409.7727)
+texture = ExtResource("7_f8mf5")
+
+[node name="Fin2" type="Sprite2D" parent="Polygons" unique_id=1137680523]
+position = Vector2(-39.500015, -987.0454)
+texture = ExtResource("8_sbdf1")

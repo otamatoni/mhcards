@@ -1,11 +1,45 @@
 [gd_scene format=3 uid="uid://coljd5qg1hj1m"]
 
 [ext_resource type="Script" uid="uid://twgmbkkrw4jo" path="res://Scripts/Monsters/BossMonsters/Rathalos.gd" id="1_77jol"]
-[ext_resource type="Texture2D" uid="uid://bbutc3uclgle0" path="res://Sprites/Monsters/BossMonsters/rathalos.jpg" id="1_ttcf7"]
+[ext_resource type="Texture2D" uid="uid://csyi3d34m6d0l" path="res://Sprites/Monsters/BossMonsters/RathalosParts/leg2.png" id="2_72qwu"]
+[ext_resource type="Texture2D" uid="uid://drpsf55kwd8qp" path="res://Sprites/Monsters/BossMonsters/RathalosParts/wing1.png" id="3_xtnuy"]
+[ext_resource type="Texture2D" uid="uid://b47cfsg8yqiq2" path="res://Sprites/Monsters/BossMonsters/RathalosParts/wing2.png" id="4_xsxh8"]
+[ext_resource type="Texture2D" uid="uid://cq6dt07tqrdpe" path="res://Sprites/Monsters/BossMonsters/RathalosParts/body.png" id="5_ple73"]
+[ext_resource type="Texture2D" uid="uid://dldf38ia1u7ld" path="res://Sprites/Monsters/BossMonsters/RathalosParts/tail.png" id="6_18l7o"]
+[ext_resource type="Texture2D" uid="uid://basopufe4vv1m" path="res://Sprites/Monsters/BossMonsters/RathalosParts/leg1.png" id="7_wsxuj"]
+[ext_resource type="Texture2D" uid="uid://x4i5mlg532xb" path="res://Sprites/Monsters/BossMonsters/RathalosParts/head.png" id="8_mrcu3"]
 
 [node name="Rathalos" type="Node2D" unique_id=1850950432]
 script = ExtResource("1_77jol")
 
-[node name="Rathalos" type="Sprite2D" parent="." unique_id=57126415]
-position = Vector2(786, 345)
-texture = ExtResource("1_ttcf7")
+[node name="Polygons" type="Node2D" parent="." unique_id=835707364]
+position = Vector2(796, 296)
+scale = Vector2(0.24, 0.24)
+
+[node name="Leg2" type="Sprite2D" parent="Polygons" unique_id=1097565113]
+position = Vector2(-131, 315)
+texture = ExtResource("2_72qwu")
+
+[node name="Wing1" type="Sprite2D" parent="Polygons" unique_id=438454747]
+position = Vector2(1203, -919)
+texture = ExtResource("3_xtnuy")
+
+[node name="Wing2" type="Sprite2D" parent="Polygons" unique_id=1925531711]
+position = Vector2(-1121, -963)
+texture = ExtResource("4_xsxh8")
+
+[node name="Body" type="Sprite2D" parent="Polygons" unique_id=1459073286]
+position = Vector2(207, 66)
+texture = ExtResource("5_ple73")
+
+[node name="Tail" type="Sprite2D" parent="Polygons" unique_id=1537752901]
+position = Vector2(124, 1215)
+texture = ExtResource("6_18l7o")
+
+[node name="Leg1" type="Sprite2D" parent="Polygons" unique_id=2108608608]
+position = Vector2(252, 366)
+texture = ExtResource("7_wsxuj")
+
+[node name="Head" type="Sprite2D" parent="Polygons" unique_id=806146389]
+position = Vector2(-266, -356)
+texture = ExtResource("8_mrcu3")
