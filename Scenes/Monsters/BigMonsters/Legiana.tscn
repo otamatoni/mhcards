@@ -11,24 +11,25 @@
 script = ExtResource("1_wu2ge")
 
 [node name="Polygons" type="Node2D" parent="." unique_id=1923109815]
-position = Vector2(835, 401.00003)
-scale = Vector2(0.21, 0.21)
+position = Vector2(849, 526)
+scale = Vector2(0.26, 0.26)
 
 [node name="Wing1" type="Sprite2D" parent="Polygons" unique_id=387040914]
-position = Vector2(-1211, -757)
+position = Vector2(-1170.4614, -1362.0001)
 texture = ExtResource("2_vg344")
 
 [node name="Wing2" type="Sprite2D" parent="Polygons" unique_id=1668097419]
-position = Vector2(1202, -813)
+position = Vector2(1242.5386, -1418.0001)
 texture = ExtResource("3_dturv")
 
 [node name="Body" type="Sprite2D" parent="Polygons" unique_id=1957576035]
+position = Vector2(40.538616, -605.0002)
 texture = ExtResource("4_0p4yr")
 
 [node name="Tail" type="Sprite2D" parent="Polygons" unique_id=361967927]
-position = Vector2(654, 493)
+position = Vector2(694.53864, -112.00017)
 texture = ExtResource("5_s2mps")
 
 [node name="Head" type="Sprite2D" parent="Polygons" unique_id=1203705591]
-position = Vector2(-38, -988)
+position = Vector2(2.5386145, -1593.0001)
 texture = ExtResource("6_4pgyx")
