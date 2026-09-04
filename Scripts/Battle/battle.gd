@@ -49,9 +49,16 @@ func fight_small() -> void:
 			monster_class = vale_small.pick_random().get_global_name()
 
 	var path_name = PathReferences.small_monster_dir + monster_class + '.tscn'
-	var monster_scene = load(path_name).instantiate()
-	monsters.add_child(monster_scene)
-	monster_hand = monster_scene.get_random_sequence().duplicate(true)
+	var quantity = randi() % 3
+	var monster_scene
+	for i in range(quantity + 1):
+		monster_scene = load(path_name).instantiate()
+		monsters.add_child(monster_scene)
+		monster_scene.position.x += 150 * i
+		for action in monster_scene.get_random_sequence().duplicate(true):
+			if monster_hand.size() > 3: 
+				break
+			monster_hand.append(action)
 
 func fight_big() -> void:
 	# spawns random big monster from the region
@@ -133,6 +140,8 @@ func _on_end_phase_button_up() -> void:
 	# add new actions into the monster hand
 	for monster in monsters.get_children():
 		for action in monster.get_random_sequence().duplicate(true):
+			if monster_hand.size() > 3: 
+				break
 			monster_hand.append(action)
 
 	# back to player phase

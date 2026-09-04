@@ -7,7 +7,7 @@
 script = ExtResource("1_tfwf5")
 
 [node name="Polygons" type="Node2D" parent="." unique_id=281944984]
-position = Vector2(927.99994, 443.99997)
+position = Vector2(778, 410.00003)
 scale = Vector2(0.195, 0.195)
 
 [node name="JagrasSmall" type="Sprite2D" parent="Polygons" unique_id=1183673230]
