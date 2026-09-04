@@ -16,8 +16,16 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o8bsx"]
 size = Vector2(1152, 216)
 
-[node name="Battle" type="Node2D" unique_id=1994073809]
+[node name="Battle" type="Node2D" unique_id=1994073809 node_paths=PackedStringArray("action_timer", "monsters", "end_phase_button", "player")]
 script = ExtResource("1_o8bsx")
+action_timer = NodePath("ActionTimer")
+monsters = NodePath("Monsters")
+end_phase_button = NodePath("BattleUI/EndPhase")
+player = NodePath("Player")
+
+[node name="ActionTimer" type="Timer" parent="." unique_id=1520356781]
+wait_time = 0.5
+one_shot = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1005471350]
 modulate = Color(0.376471, 0.266667, 0.211765, 1)
@@ -82,6 +90,13 @@ offset_right = 489.0
 offset_bottom = 118.0
 scale = Vector2(1.535, 1.535)
 text = "fight is happening!!"
+
+[node name="EndPhase" type="Button" parent="BattleUI" unique_id=2078705294]
+offset_left = 995.0
+offset_top = 494.0
+offset_right = 1131.0
+offset_bottom = 550.0
+text = "End Phase"
 
 [node name="Player" type="Node2D" parent="." unique_id=1739231503 node_paths=PackedStringArray("body_sprite", "arm_sprite", "weap_sprite", "sprites")]
 script = ExtResource("6_vvvpr")
@@ -203,7 +218,10 @@ offset_right = 17.0
 offset_bottom = 231.0
 text = "owie"
 
+[node name="Monsters" type="Node2D" parent="." unique_id=1110794806]
+
 [connection signal="button_up" from="BattleUI/Lose" to="BattleUI/Lose" method="_on_button_up"]
+[connection signal="button_up" from="BattleUI/EndPhase" to="." method="_on_end_phase_button_up"]
 [connection signal="button_up" from="Player/temp ui crap/ArmorPrev" to="Player" method="_on_armor_prev_button_up"]
 [connection signal="button_up" from="Player/temp ui crap/ArmorNext" to="Player" method="_on_armor_next_button_up"]
 [connection signal="button_up" from="Player/temp ui crap/WeapNext" to="Player" method="_on_weap_next_button_up"]
