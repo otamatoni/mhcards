@@ -143,8 +143,6 @@ func _on_end_phase_button_up() -> void:
 			if monster_hand.size() > 3: 
 				break
 			monster_hand.append(action)
-		for sequence in monster.sequences:
-			print(sequence.get_actions())
 
 	# back to player phase
 	end_phase_button.visible = true
