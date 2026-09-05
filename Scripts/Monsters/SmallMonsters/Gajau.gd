@@ -2,11 +2,12 @@ extends SmallMonster
 
 class_name Gajau
 
-# Called when the node enters the scene tree for the first time.
+var dive_action = Action.new(dive)
+
 func _ready() -> void:
 	super()
+	sequences.append(Sequence.new([dive_action]))
 	print('gajau appeared')
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func dive() -> void:
+	print('gajau dives')
