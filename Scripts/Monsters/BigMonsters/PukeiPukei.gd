@@ -13,8 +13,6 @@ func _ready() -> void:
 	sequences.append(Sequence.new([eat_shroom_action]))
 	sequences.append(Sequence.new([charge_tail_action, wait_action, tail_release_action]))
 	sequences.append(Sequence.new([spit_poison_action]))
-	sequences.append(Sequence.new([spit_poison_action, spit_poison_action]))
-	sequences.append(Sequence.new([spit_poison_action, spit_poison_action, spit_poison_action]))
 	sequences.append(Sequence.new([roar_action, attack_action, attack_action]))
 	
 	print('pukei appeared')

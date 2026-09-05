@@ -3,12 +3,12 @@ extends BigMonster
 class_name TobiKadachi
 
 var charge_tail_action = Action.new(charge_tail)
-var release_tail_action = Action.new(release_tail)
+var tail_attack_action = Action.new(tail_attack)
 
 func _ready() -> void:
 	super()
 	sequences.append(Sequence.new([charge_tail_action]))
-	sequences.append(Sequence.new([release_tail_action]))
+	sequences.append(Sequence.new([tail_attack_action]))
 	sequences.append(Sequence.new([roar_action, attack_action, attack_action]))
 	
 	print('tobi appeared')
@@ -16,5 +16,5 @@ func _ready() -> void:
 func charge_tail() -> void:
 	print('tobi charges tail')
 	
-func release_tail() -> void:
+func tail_attack() -> void:
 	print('tobi releases tail electricity')

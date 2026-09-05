@@ -7,7 +7,9 @@ var lightning_action = Action.new(lightning)
 
 func _ready() -> void:
 	super()
+	sequences.append(Sequence.new([charge_action, charge_action]))
 	sequences.append(Sequence.new([charge_action, charge_action, charge_action]))
+	sequences.append(Sequence.new([lightning_action, lightning_action]))
 	sequences.append(Sequence.new([lightning_action, lightning_action, lightning_action]))
 	
 	print('kirin appeared')
