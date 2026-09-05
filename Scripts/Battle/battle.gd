@@ -55,7 +55,7 @@ func fight_small() -> void:
 		monster_scene = load(path_name).instantiate()
 		monsters.add_child(monster_scene)
 		monster_scene.position.x += 150 * i
-		for action in monster_scene.get_random_sequence().duplicate(true):
+		for action in monster_scene.get_random_sequence().get_actions():
 			if monster_hand.size() > 3: 
 				break
 			monster_hand.append(action)
@@ -76,7 +76,7 @@ func fight_big() -> void:
 	var path_name = PathReferences.big_monster_dir + monster_class + '.tscn'
 	var monster_scene = load(path_name).instantiate()
 	monsters.add_child(monster_scene)
-	monster_hand = monster_scene.get_random_sequence().duplicate(true)
+	monster_hand = monster_scene.get_random_sequence().get_actions()
 	
 func fight_boss() -> void:
 	# spawns specific boss monster for the region
@@ -96,7 +96,7 @@ func fight_boss() -> void:
 	var path_name = PathReferences.boss_monster_dir + monster_class + '.tscn'
 	var monster_scene = load(path_name).instantiate()
 	monsters.add_child(monster_scene)
-	monster_hand = monster_scene.get_random_sequence().duplicate(true)
+	monster_hand = monster_scene.get_random_sequence().get_actions()
 
 # battle manager gets hands from both player and monster and executes accordingly
 func _on_end_phase_button_up() -> void:
@@ -139,10 +139,12 @@ func _on_end_phase_button_up() -> void:
 	
 	# add new actions into the monster hand
 	for monster in monsters.get_children():
-		for action in monster.get_random_sequence().duplicate(true):
+		for action in monster.get_random_sequence().get_actions():
 			if monster_hand.size() > 3: 
 				break
 			monster_hand.append(action)
+		for sequence in monster.sequences:
+			print(sequence.get_actions())
 
 	# back to player phase
 	end_phase_button.visible = true

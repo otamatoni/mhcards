@@ -17,9 +17,9 @@ func _ready() -> void:
 	super()
 	
 	# moveset
-	sequences.append([roar_action, attack_action, attack_action])
-	sequences.append([hip_check_action])
-	sequences.append([charge_action, wait_action, breathe_fire_action])
+	sequences.append(Sequence.new([roar_action, attack_action, attack_action]))
+	sequences.append(Sequence.new([hip_check_action]))
+	sequences.append(Sequence.new([charge_action, wait_action, breathe_fire_action]))
 	
 	# visuals
 	is_head_broken = false
@@ -30,12 +30,15 @@ func _ready() -> void:
 	frontleg.texture = preload('res://Sprites/Monsters/BigMonsters/AnjaParts/anja frontleg.png')
 	polygons.modulate = Color(1,1,1,1)
 	
+# moves
 func charge() -> void:
 	print('anja is charging up')
 	
 func breathe_fire() -> void:
 	print('anja breathes big fire')
 
+
+# temp stuff
 func _on_breakhead_button_up() -> void:
 	head.texture = preload("res://Sprites/Monsters/BigMonsters/AnjaParts/anja head broken.png")
 	is_head_broken = true

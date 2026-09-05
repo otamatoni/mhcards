@@ -8,8 +8,8 @@ var hip_check_action : Action = Action.new(hip_check)
 func _ready() -> void:
 	super()
 	# all big monsters have these basic attack sequences
-	sequences.append([attack_action, attack_action])
-	sequences.append([attack_action, attack_action, attack_action])
+	sequences.append(Sequence.new([attack_action, attack_action]))
+	sequences.append(Sequence.new([attack_action, attack_action, attack_action]))
 	
 # some big monsters can roar which stuns same turn
 func roar() -> void:
