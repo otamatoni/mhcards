@@ -8,6 +8,7 @@ var deck: CardPile
 var discard: CardPile
 var draw_pile: CardPile
 var combo: int = 0 : set = set_combo
+var items: Array[Item] = []
 
 func set_combo(value: int) -> void:
 	combo = value
