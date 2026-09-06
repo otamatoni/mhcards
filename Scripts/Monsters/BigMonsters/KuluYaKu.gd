@@ -8,7 +8,10 @@ var rock_throw_action = Action.new(rock_throw)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super()
-	sequences.append(Sequence.new([rock_action]))
+	sequences.append(Sequence.new([attack_action, dodge_action]))
+	sequences.append(Sequence.new([attack_action, attack_action]))
+	sequences.append(Sequence.new([attack_action, attack_action, attack_action]))
+	sequences.append(Sequence.new([rock_action, block_action]))
 	sequences.append(Sequence.new([rock_throw_action]))
 	sequences.append(Sequence.new([hip_check_action]))
 	print('kulu appeared')

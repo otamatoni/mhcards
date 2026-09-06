@@ -8,7 +8,10 @@ var flop_action : Action = Action.new(flop)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super()
-	sequences.append(Sequence.new([eat_action]))
+	sequences.append(Sequence.new([attack_action, block_action]))
+	sequences.append(Sequence.new([attack_action, attack_action]))
+	sequences.append(Sequence.new([attack_action, attack_action, attack_action]))
+	sequences.append(Sequence.new([eat_action, block_action]))
 	sequences.append(Sequence.new([attack_action, attack_action, flop_action]))
 	
 	print('great jagras appeared')
