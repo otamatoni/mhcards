@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="PlayerBattleStats" format=3 uid="uid://b2et483rflntw"]
+
+[ext_resource type="Script" uid="uid://dj2mu1pscioy7" path="res://Custom Resources/player_battle_stats.gd" id="1_lleox"]
+[ext_resource type="Resource" uid="uid://dofekc0gylnln" path="res://Scenes/Player/starter_deck.tres" id="2_10ms0"]
+
+[resource]
+script = ExtResource("1_lleox")
+starting_deck = ExtResource("2_10ms0")
+cards_per_turn = 5
+max_health = 30
+metadata/_custom_type_script = "uid://dj2mu1pscioy7"
