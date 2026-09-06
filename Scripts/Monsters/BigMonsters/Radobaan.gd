@@ -2,11 +2,25 @@ extends BigMonster
 
 class_name Radobaan
 
-# Called when the node enters the scene tree for the first time.
+var sleep_gas_action = Action.new(sleep_gas)
+var ball_action = Action.new(ball)
+var bone_action = Action.new(bone)
+
 func _ready() -> void:
 	super()
+	sequences.append(Sequence.new([roar_action, attack_action, attack_action]))
+	sequences.append(Sequence.new([ball_action]))
+	sequences.append(Sequence.new([sleep_gas_action]))
+	sequences.append(Sequence.new([bone_action]))
+	
+	
 	print('radobaan appeared')
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func sleep_gas() -> void:
+	print('rado releases sleep gas')
+	
+func ball() -> void:
+	print('rado beyblades you')
+	
+func bone() -> void:
+	print('rado covers itself in bone')

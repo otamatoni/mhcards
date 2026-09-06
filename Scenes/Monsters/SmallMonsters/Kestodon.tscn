@@ -7,7 +7,7 @@
 script = ExtResource("1_h8dhk")
 
 [node name="Polygons" type="Node2D" parent="." unique_id=1364830389]
-position = Vector2(928.00006, 457.00003)
+position = Vector2(732, 435.00003)
 scale = Vector2(0.17, 0.17)
 
 [node name="Kesto" type="Sprite2D" parent="Polygons" unique_id=1444767825]

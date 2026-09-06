@@ -9,11 +9,19 @@ class_name Anjanath
 
 var is_head_broken = false
 
-
+var charge_action : Action = Action.new(charge)
+var breathe_fire_action : Action = Action.new(breathe_fire)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super()
+	
+	# moveset
+	sequences.append(Sequence.new([roar_action, attack_action, attack_action]))
+	sequences.append(Sequence.new([hip_check_action]))
+	sequences.append(Sequence.new([charge_action, wait_action, breathe_fire_action]))
+	
+	# visuals
 	is_head_broken = false
 	print('anja appeared')
 	head.texture = preload("res://Sprites/Monsters/BigMonsters/AnjaParts/anja head.png")
@@ -22,12 +30,15 @@ func _ready() -> void:
 	frontleg.texture = preload('res://Sprites/Monsters/BigMonsters/AnjaParts/anja frontleg.png')
 	polygons.modulate = Color(1,1,1,1)
 	
+# moves
+func charge() -> void:
+	print('anja is charging up')
+	
+func breathe_fire() -> void:
+	print('anja breathes big fire')
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
-
+# temp stuff
 func _on_breakhead_button_up() -> void:
 	head.texture = preload("res://Sprites/Monsters/BigMonsters/AnjaParts/anja head broken.png")
 	is_head_broken = true

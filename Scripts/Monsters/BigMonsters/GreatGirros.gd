@@ -2,11 +2,13 @@ extends BigMonster
 
 class_name GreatGirros
 
-# Called when the node enters the scene tree for the first time.
+var para_action = Action.new(para)
+
 func _ready() -> void:
 	super()
+	sequences.append(Sequence.new([para_action, para_action]))
+	sequences.append(Sequence.new([para_action, para_action, para_action]))
 	print('great girros appeared')
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func para() -> void:
+	print('ggirros bites with paralyzing fangs')

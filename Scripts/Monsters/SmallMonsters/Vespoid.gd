@@ -2,11 +2,12 @@ extends SmallMonster
 
 class_name Vespoid
 
-# Called when the node enters the scene tree for the first time.
+var sting_action = Action.new(sting)
+
 func _ready() -> void:
 	super()
+	sequences.append(Sequence.new([sting_action]))
 	print('vespy appeared')
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func sting() -> void: 
+	print('vespoid stings')

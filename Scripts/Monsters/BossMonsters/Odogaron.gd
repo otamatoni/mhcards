@@ -2,11 +2,19 @@ extends BigMonster
 
 class_name Odogaron
 
-# Called when the node enters the scene tree for the first time.
+var claw_action = Action.new(claw)
+var eat_action = Action.new(eat)
+
 func _ready() -> void:
 	super()
+	sequences.append(Sequence.new([claw_action, claw_action]))
+	sequences.append(Sequence.new([claw_action, claw_action, claw_action]))
+	sequences.append(Sequence.new([eat_action]))
+
 	print('clifford appeared')
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func claw() -> void:
+	print('odo slashes with bleed claws')
+	
+func eat() -> void:
+	print('odo eats some meat')

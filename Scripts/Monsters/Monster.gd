@@ -11,7 +11,17 @@ var die_tween : Tween
 var pos_x_og 
 var scale_y_og 
 
+# possible sequences of actions that the monster can do
+var sequences : Array[Sequence] = []
+
+# all monsters have a basic attack and a wait turn
+var attack_action : Action = Action.new(attack)
+var wait_action : Action = Action.new(wait)
+
 func _ready() -> void:
+	# all monsters can do at least 1 basic attack
+	sequences.append(Sequence.new([attack_action]))
+	
 	# save original transform properties of sprite
 	polygons.modulate = Color(1, 1, 1, 1)
 	pos_x_og = polygons.position.x
@@ -50,8 +60,9 @@ func die() -> void:
 	take_damage()
 	dmg_tween.tween_property(polygons, "modulate", Color(1, 1, 1, 0), 0.4)
 	
-		
+# attack action function
 func attack() -> void:
+	print('basic attack')
 	# anim
 	if atk_tween:
 		atk_tween.kill()
@@ -59,4 +70,9 @@ func attack() -> void:
 	atk_tween.tween_property(polygons, 'position', Vector2(pos_x_og - 20, polygons.position.y), 0.2)
 	atk_tween.tween_property(polygons, 'position', Vector2(pos_x_og, polygons.position.y), 0.5).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
 	
+# wait action function
+func wait() -> void:
+	print('monster is chilling')
 	
+func get_random_sequence() -> Sequence:
+	return sequences.pick_random()

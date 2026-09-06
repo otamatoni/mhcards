@@ -2,11 +2,16 @@ extends BigMonster
 
 class_name Legiana
 
-# Called when the node enters the scene tree for the first time.
+var ice_wing_action = Action.new(ice_wing)
+
 func _ready() -> void:
 	super()
+	sequences.append(Sequence.new([roar_action, attack_action, attack_action]))
+	sequences.append(Sequence.new([ice_wing_action]))
+	sequences.append(Sequence.new([ice_wing_action, ice_wing_action]))
+	
+	
 	print('legiana appeared')
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	
+func ice_wing() -> void:
+	print('legiana ice wings')

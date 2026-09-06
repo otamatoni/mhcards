@@ -2,11 +2,23 @@ extends BigMonster
 
 class_name Diablos
 
-# Called when the node enters the scene tree for the first time.
+var dig_action = Action.new(dig)
+var jump_action = Action.new(jump)
+var charge_action = Action.new(charge)
+
 func _ready() -> void:
 	super()
+	sequences.append(Sequence.new([roar_action, attack_action, attack_action]))
+	sequences.append(Sequence.new([dig_action, wait_action, jump_action]))
+	sequences.append(Sequence.new([charge_action, charge_action, charge_action]))
+	
 	print('diablos appeared')
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func dig() -> void:
+	print('diablos digs')
+	
+func jump() -> void:
+	print('diablos emerges')
+	
+func charge() -> void:
+	print('diablos charges at you')

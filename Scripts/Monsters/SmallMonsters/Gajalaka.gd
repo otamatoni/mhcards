@@ -2,11 +2,13 @@ extends SmallMonster
 
 class_name Gajalaka
 
-# Called when the node enters the scene tree for the first time.
+var bomb_action = Action.new(bomb)
+
 func _ready() -> void:
 	super()
+	sequences.append(Sequence.new([bomb_action]))
+	
 	print('gajalaka appeared')
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func bomb() -> void:
+	print('gaja throws bomb')

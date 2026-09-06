@@ -2,11 +2,12 @@ extends SmallMonster
 
 class_name Kestodon
 
-# Called when the node enters the scene tree for the first time.
+var headbutt_action = Action.new(headbutt)
+
 func _ready() -> void:
 	super()
+	sequences.append(Sequence.new(headbutt_action))
 	print('kestodon appeared')
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func headbutt() -> void:
+	print('kesto headbutts')

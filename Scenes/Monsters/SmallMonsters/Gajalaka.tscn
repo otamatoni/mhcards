@@ -7,7 +7,7 @@
 script = ExtResource("1_rgjgf")
 
 [node name="Polygons" type="Node2D" parent="." unique_id=994943980]
-position = Vector2(954, 461)
+position = Vector2(749.00006, 441.00003)
 scale = Vector2(0.105, 0.105)
 
 [node name="Gajalaka" type="Sprite2D" parent="Polygons" unique_id=973680161]

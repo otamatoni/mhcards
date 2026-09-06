@@ -1,5 +1,7 @@
 extends Node
 
+class_name SceneSwitcher
+
 @export var max_trials = 2
 @export var num_starting_nodes = 2
 @onready var current_scene = $Map
@@ -11,7 +13,6 @@ var num_layers # height
 var map = [] # 3D arr, [x][y][Vector2(event type, node status)]
 var paths = {}
 enum events {SMALL_MON, BIG_MON, CAMP, EXPE, SMITHY, CHEF}
-
 func _ready() -> void:
 	generate_map()
 	load_map()
