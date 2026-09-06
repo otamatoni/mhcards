@@ -6,7 +6,3 @@ class_name Hornetaur
 func _ready() -> void:
 	super()
 	print('horny appeared')
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
