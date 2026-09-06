@@ -7,9 +7,13 @@ var eat_action = Action.new(eat)
 
 func _ready() -> void:
 	super()
+	sequences.append(Sequence.new([attack_action, dodge_action]))
+	sequences.append(Sequence.new([attack_action, attack_action]))
+	sequences.append(Sequence.new([attack_action, attack_action, attack_action]))
 	sequences.append(Sequence.new([claw_action, claw_action]))
 	sequences.append(Sequence.new([claw_action, claw_action, claw_action]))
 	sequences.append(Sequence.new([eat_action]))
+	sequences.append(Sequence.new([dodge_action, dodge_action, claw_action]))
 
 	print('clifford appeared')
 

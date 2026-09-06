@@ -9,8 +9,12 @@ var jump_action = Action.new(jump)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super()
+	sequences.append(Sequence.new([attack_action]))
+	sequences.append(Sequence.new([attack_action, attack_action]))
+	sequences.append(Sequence.new([attack_action, attack_action, attack_action]))
 	sequences.append(Sequence.new([charge_flash_action, flash_action, jump_action]))
 	sequences.append(Sequence.new([hip_check_action]))
+	sequences.append(Sequence.new([dodge_action, dodge_action]))
 	
 	print('tzitzi appeared')
 

@@ -17,6 +17,9 @@ func _ready() -> void:
 	super()
 	
 	# moveset
+	sequences.append(Sequence.new([attack_action, block_action]))
+	sequences.append(Sequence.new([attack_action, attack_action]))
+	sequences.append(Sequence.new([attack_action, attack_action, attack_action]))
 	sequences.append(Sequence.new([roar_action, attack_action, attack_action]))
 	sequences.append(Sequence.new([hip_check_action]))
 	sequences.append(Sequence.new([charge_action, wait_action, breathe_fire_action]))

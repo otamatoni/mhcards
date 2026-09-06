@@ -8,10 +8,14 @@ var eat_action = Action.new(eat)
 
 func _ready() -> void:
 	super()
+	sequences.append(Sequence.new([attack_action, block_action]))
+	sequences.append(Sequence.new([attack_action, attack_action, block_action]))
+	sequences.append(Sequence.new([attack_action, attack_action, attack_action]))
 	sequences.append(Sequence.new([charge_action, charge_action]))
-	sequences.append(Sequence.new([shake_action]))
+	sequences.append(Sequence.new([shake_action, block_action]))
 	sequences.append(Sequence.new([roar_action, attack_action, attack_action]))
 	sequences.append(Sequence.new([eat_action]))
+	sequences.append(Sequence.new([block_action, block_action, block_action]))
 	
 	print('barroth appeared')
 	

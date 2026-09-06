@@ -10,10 +10,13 @@ var tail_release_action = Action.new(tail_release)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super()
-	sequences.append(Sequence.new([eat_shroom_action]))
+	sequences.append(Sequence.new([attack_action, block_action]))
+	sequences.append(Sequence.new([attack_action, attack_action]))
+	sequences.append(Sequence.new([attack_action, attack_action, attack_action]))
+	sequences.append(Sequence.new([roar_action, attack_action, attack_action]))
+	sequences.append(Sequence.new([eat_shroom_action, block_action]))
 	sequences.append(Sequence.new([charge_tail_action, wait_action, tail_release_action]))
 	sequences.append(Sequence.new([spit_poison_action]))
-	sequences.append(Sequence.new([roar_action, attack_action, attack_action]))
 	
 	print('pukei appeared')
 

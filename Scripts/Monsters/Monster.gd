@@ -14,14 +14,14 @@ var scale_y_og
 # possible sequences of actions that the monster can do
 var sequences : Array[Sequence] = []
 
-# all monsters have a basic attack and a wait turn
+# all monsters have these actions
 var attack_action : Action = Action.new(attack)
 var wait_action : Action = Action.new(wait)
+var block_action : Action = Action.new(block)
+var dodge_action : Action = Action.new(dodge)
+
 
 func _ready() -> void:
-	# all monsters can do at least 1 basic attack
-	sequences.append(Sequence.new([attack_action]))
-	
 	# save original transform properties of sprite
 	polygons.modulate = Color(1, 1, 1, 1)
 	pos_x_og = polygons.position.x
@@ -74,5 +74,13 @@ func attack() -> void:
 func wait() -> void:
 	print('monster is chilling')
 	
+# block action function
+func block() -> void:
+	print('monster is blocking')
+	
+# dodge action function
+func dodge() -> void:
+	print('monster is dodging')
+
 func get_random_sequence() -> Sequence:
 	return sequences.pick_random()

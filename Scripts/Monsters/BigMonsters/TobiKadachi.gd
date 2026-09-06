@@ -7,8 +7,11 @@ var tail_attack_action = Action.new(tail_attack)
 
 func _ready() -> void:
 	super()
+	sequences.append(Sequence.new([attack_action]))
+	sequences.append(Sequence.new([attack_action, attack_action, dodge_action]))
+	sequences.append(Sequence.new([attack_action, attack_action, attack_action]))
 	sequences.append(Sequence.new([charge_tail_action]))
-	sequences.append(Sequence.new([tail_attack_action]))
+	sequences.append(Sequence.new([tail_attack_action, dodge_action]))
 	sequences.append(Sequence.new([roar_action, attack_action, attack_action]))
 	
 	print('tobi appeared')
