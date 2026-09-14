@@ -7,5 +7,6 @@
 script = ExtResource("1_lleox")
 starting_deck = ExtResource("2_10ms0")
 cards_per_turn = 5
-max_health = 30
+max_health = 100
+base_armor = 5
 metadata/_custom_type_script = "uid://dj2mu1pscioy7"

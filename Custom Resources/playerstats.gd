@@ -18,4 +18,5 @@ func set_current_health(value: int) -> void:
 	stats_changed.emit()
 
 func set_gold(value: int) -> void:
-	
+	gold = value
+	stats_changed.emit()

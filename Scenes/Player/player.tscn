@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://8vaps1iooecn"]
+
+[ext_resource type="Script" uid="uid://chnibagi8eput" path="res://Scripts/Player/player_actions.gd" id="1_dd0ac"]
+[ext_resource type="Texture2D" uid="uid://co27o27c80jdq" path="res://Sprites/Player/Armor/Body/base.png" id="2_0u5uq"]
+[ext_resource type="Texture2D" uid="uid://pn2nb2afl5we" path="res://Sprites/Player/Armor/Body/pukei.png" id="3_jlvik"]
+[ext_resource type="Texture2D" uid="uid://b3dioqhmsvr2a" path="res://Sprites/Player/Weapons/GS/base.png" id="4_gk6dx"]
+[ext_resource type="Texture2D" uid="uid://bwvqnqextwh0v" path="res://Sprites/Player/Armor/Arm/base.png" id="5_jhyir"]
+[ext_resource type="Texture2D" uid="uid://bvi8tpki7eqx7" path="res://Sprites/Player/Armor/Arm/pukei.png" id="6_74mp2"]
+
+[node name="Player" type="Node2D" unique_id=72994002 node_paths=PackedStringArray("body_sprite", "arm_sprite", "weap_sprite", "sprites")]
+script = ExtResource("1_dd0ac")
+body_sprite = NodePath("Sprites/Body")
+arm_sprite = NodePath("Sprites/Arm")
+weap_sprite = NodePath("Sprites/Weapon")
+sprites = NodePath("Sprites")
+
+[node name="Sprites" type="Node2D" parent="." unique_id=445515954]
+position = Vector2(124, 382)
+scale = Vector2(0.1, 0.1)
+
+[node name="BodyBase" type="Sprite2D" parent="Sprites" unique_id=1107885340]
+position = Vector2(0, -1423.0771)
+texture = ExtResource("2_0u5uq")
+
+[node name="Body" type="Sprite2D" parent="Sprites" unique_id=1212137297]
+position = Vector2(0, -1423.0771)
+texture = ExtResource("3_jlvik")
+
+[node name="Weapon" type="Sprite2D" parent="Sprites" unique_id=35954939]
+position = Vector2(740, -1570)
+scale = Vector2(0.9999998, 0.9999998)
+texture = ExtResource("4_gk6dx")
+
+[node name="ArmBase" type="Sprite2D" parent="Sprites" unique_id=2061006005]
+position = Vector2(0, -1423.0771)
+texture = ExtResource("5_jhyir")
+
+[node name="Arm" type="Sprite2D" parent="Sprites" unique_id=253671921]
+position = Vector2(0, -1423.0771)
+texture = ExtResource("6_74mp2")
+
+[node name="temp ui crap" type="Node2D" parent="." unique_id=442828316]
+position = Vector2(52, 3)
+
+[node name="ArmorPrev" type="Button" parent="temp ui crap" unique_id=2112713254]
+offset_left = 9.0
+offset_top = 37.0
+offset_right = 52.0
+offset_bottom = 68.0
+text = "prev"
+
+[node name="ArmorNext" type="Button" parent="temp ui crap" unique_id=472225158]
+offset_left = 136.0
+offset_top = 41.0
+offset_right = 179.0
+offset_bottom = 72.0
+text = "next"
+
+[node name="tempspritetest" type="Label" parent="temp ui crap" unique_id=1524354524]
+offset_left = 33.0
+offset_top = 10.0
+offset_right = 161.0
+offset_bottom = 33.0
+text = "temp sprite test "
+
+[node name="Armor" type="Label" parent="temp ui crap" unique_id=862199566]
+offset_left = 66.0
+offset_top = 41.0
+offset_right = 116.0
+offset_bottom = 64.0
+text = "Armor"
+
+[node name="WeapNext" type="Button" parent="temp ui crap" unique_id=1625543231]
+offset_left = 136.0
+offset_top = 80.0
+offset_right = 179.0
+offset_bottom = 111.0
+text = "next
+"
+
+[node name="WeapPrev" type="Button" parent="temp ui crap" unique_id=998524864]
+offset_left = 12.0
+offset_top = 76.0
+offset_right = 55.0
+offset_bottom = 107.0
+text = "prev"
+
+[node name="Weap" type="Label" parent="temp ui crap" unique_id=1473484621]
+offset_left = 64.0
+offset_top = 79.0
+offset_right = 128.0
+offset_bottom = 102.0
+text = "Weapon"
+
+[node name="GS" type="Button" parent="temp ui crap" unique_id=1583150485]
+offset_left = -42.0
+offset_top = 22.0
+offset_right = -13.0
+offset_bottom = 53.0
+text = "GS"
+
+[node name="IG" type="Button" parent="temp ui crap" unique_id=58441611]
+offset_left = -42.0
+offset_top = 60.0
+offset_right = -17.0
+offset_bottom = 91.0
+text = "IG"
+
+[node name="idle" type="Button" parent="temp ui crap" unique_id=2112387023]
+offset_left = -37.0
+offset_top = 126.0
+offset_bottom = 157.0
+text = "idle
+"
+
+[node name="attack" type="Button" parent="temp ui crap" unique_id=454089980]
+offset_left = -39.0
+offset_top = 164.0
+offset_right = 18.0
+offset_bottom = 195.0
+text = "attack"
+
+[node name="owie" type="Button" parent="temp ui crap" unique_id=2107015476]
+offset_left = -40.0
+offset_top = 200.0
+offset_right = 17.0
+offset_bottom = 231.0
+text = "owie"
+
+[connection signal="button_up" from="temp ui crap/ArmorPrev" to="." method="_on_armor_prev_button_up"]
+[connection signal="button_up" from="temp ui crap/ArmorNext" to="." method="_on_armor_next_button_up"]
+[connection signal="button_up" from="temp ui crap/WeapNext" to="." method="_on_weap_next_button_up"]
+[connection signal="button_up" from="temp ui crap/WeapPrev" to="." method="_on_weap_prev_button_up"]
+[connection signal="button_up" from="temp ui crap/GS" to="." method="_on_gs_button_up"]
+[connection signal="button_up" from="temp ui crap/IG" to="." method="_on_ig_button_up"]
+[connection signal="button_up" from="temp ui crap/idle" to="." method="_on_idle_button_up"]
+[connection signal="button_up" from="temp ui crap/attack" to="." method="_on_attack_button_up"]
+[connection signal="button_up" from="temp ui crap/owie" to="." method="_on_owie_button_up"]

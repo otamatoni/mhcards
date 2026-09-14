@@ -1,5 +1,15 @@
 extends Node2D
 
+<<<<<<< Updated upstream
+=======
+@export var action_timer : Timer
+@export var monsters : Node2D
+@export var end_phase_button : Button
+@export var player : Node2D
+@export var campaign_stats : PlayerStats
+@export var player_stats : PlayerBattleStats
+
+>>>>>>> Stashed changes
 var battle_type : String
 
 var forest_mons = [GreatJagras, KuluYaKu, PukeiPukei, TobiKadachi, Anjanath, Rathian]
@@ -12,6 +22,7 @@ var wildspire_small = [Kestodon, Apceros, Gajalaka, Vespoid]
 var coral_small = [Shamos, Raphinos, Gajalaka, Vespoid]
 var vale_small = [Girros, Hornetaur, Gajalaka, Vespoid]
 
+<<<<<<< Updated upstream
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -20,6 +31,15 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+=======
+func _ready() -> void:
+	var battle_stats = player_stats.create_instance()
+	
+	battle_stats.max_health = campaign_stats.max_health
+	battle_stats.health = campaign_stats.current_health
+	
+	player.stats = battle_stats
+>>>>>>> Stashed changes
 
 func set_battle_type(type: String) -> void:
 	battle_type = type
@@ -63,8 +83,14 @@ func fight_big() -> void:
 
 	var path_name = PathReferences.big_monster_dir + monster_class + '.tscn'
 	var monster_scene = load(path_name).instantiate()
+<<<<<<< Updated upstream
 	add_child(monster_scene)
 		
+=======
+	monster_scene.stats = monster_scene.base_stats.create_instance()
+	monsters.add_child(monster_scene)
+	monster_hand = monster_scene.get_random_sequence().get_actions()
+>>>>>>> Stashed changes
 	
 func fight_boss() -> void:
 	# spawns specific boss monster for the region

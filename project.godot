@@ -27,6 +27,11 @@ PlayerData="*uid://c2bfmx4l3bkd"
 
 project/assembly_name="mhcards"
 
+[global_group]
+
+player=""
+enemies=""
+
 [input]
 
 left_mouse={

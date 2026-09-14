@@ -3,6 +3,7 @@ extends Node2D
 
 
 @onready var polygons: Node2D = $Polygons
+@export var base_stats: MonsterStats
 
 var idle_tween : Tween
 var dmg_tween : Tween
