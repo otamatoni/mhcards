@@ -13,9 +13,10 @@
 size = Vector2(1152, 216)
 
 
-[node name="Battle" type="Node2D" unique_id=1994073809 node_paths=PackedStringArray("action_timer", "end_phase_button")]
+[node name="Battle" type="Node2D" unique_id=1994073809 node_paths=PackedStringArray("action_timer", "monsters, "end_phase_button")]
 script = ExtResource("1_o8bsx")
 action_timer = NodePath("ActionTimer")
+monsters = NodePath("Monsters")
 end_phase_button = NodePath("BattleUI/EndPhase")
 
 [node name="ActionTimer" type="Timer" parent="." unique_id=1520356781]
@@ -96,6 +97,8 @@ text = "End Phase"
 [node name="Player" parent="." unique_id=72994002 instance=ExtResource("7_j1k4e")]
 
 [node name="Monsters" parent="." unique_id=1011924438 instance=ExtResource("8_17ekq")]
+
+[node name="Monsters" type="Node2D" parent="." unique_id=1110794806]
 
 [connection signal="button_up" from="BattleUI/Lose" to="BattleUI/Lose" method="_on_button_up"]
 [connection signal="button_up" from="BattleUI/EndPhase" to="." method="_on_end_phase_button_up"]

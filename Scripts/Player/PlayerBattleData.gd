@@ -14,6 +14,9 @@ var die_tween : Tween
 var pos_x_og 
 var scale_y_og 
 
+# test basic action
+var attack_action : Action = Action.new(attack) 
+
 # temp vars to test player sprites
 var armors = ['anja', 'baan', 'bar', 'chain', 'dia', 'gir', 'jagras', 'jyura', 'kiri', 'kulu', 'legi', 'odo', 'pao', 'pukei', 'rath', 'ratha', 'tobi', 'tzi']
 var gs = ['anja', 'aqua', 'bar', 'base', 'bone', 'dbone', 'frost', 'gir', 'jag', 'kiri', 'puk', 'rado', 'ratha', 'thunder']
@@ -33,11 +36,7 @@ func _ready() -> void:
 	pos_x_og = sprites.position.x
 	scale_y_og = sprites.scale.y
 	idle()
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	
 	
 func take_damage(damage: float) -> void: 
 	hp -= damage
@@ -53,6 +52,9 @@ func take_damage(damage: float) -> void:
 	
 func update_stats() -> void:
 	PlayerData.current_hp = hp
+
+func get_actions() -> Array:
+	return [attack_action, attack_action, attack_action]
 	
 func idle() -> void:
 	# anim

@@ -6,7 +6,3 @@ class_name Shamos
 func _ready() -> void:
 	super()
 	print('shamos appeared')
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

@@ -7,7 +7,7 @@
 script = ExtResource("1_yagbc")
 
 [node name="Polygons" type="Node2D" parent="." unique_id=786048126]
-position = Vector2(896.99994, 468)
+position = Vector2(734, 450.99997)
 scale = Vector2(0.215, 0.215)
 
 [node name="Apceros" type="Sprite2D" parent="Polygons" unique_id=1816241280]

@@ -7,7 +7,7 @@
 script = ExtResource("1_b41pe")
 
 [node name="Polygons" type="Node2D" parent="." unique_id=1675386888]
-position = Vector2(973.99994, 308)
+position = Vector2(733.99994, 316)
 scale = Vector2(0.18, 0.18)
 
 [node name="Vespy" type="Sprite2D" parent="Polygons" unique_id=1364646557]
