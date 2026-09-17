@@ -12,10 +12,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o8bsx"]
 size = Vector2(1152, 216)
 
-<<<<<<< Updated upstream
-[node name="Battle" type="Node2D" unique_id=1994073809]
-script = ExtResource("1_o8bsx")
-=======
+
 [node name="Battle" type="Node2D" unique_id=1994073809 node_paths=PackedStringArray("action_timer", "end_phase_button")]
 script = ExtResource("1_o8bsx")
 action_timer = NodePath("ActionTimer")
@@ -24,7 +21,6 @@ end_phase_button = NodePath("BattleUI/EndPhase")
 [node name="ActionTimer" type="Timer" parent="." unique_id=1520356781]
 wait_time = 0.5
 one_shot = true
->>>>>>> Stashed changes
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1005471350]
 modulate = Color(0.376471, 0.266667, 0.211765, 1)
@@ -90,138 +86,6 @@ offset_bottom = 118.0
 scale = Vector2(1.535, 1.535)
 text = "fight is happening!!"
 
-<<<<<<< Updated upstream
-[node name="Player" type="Node2D" parent="." unique_id=1739231503 node_paths=PackedStringArray("body_sprite", "arm_sprite", "weap_sprite", "sprites")]
-script = ExtResource("6_vvvpr")
-body_sprite = NodePath("Sprites/Body")
-arm_sprite = NodePath("Sprites/Arm")
-weap_sprite = NodePath("Sprites/Weapon")
-sprites = NodePath("Sprites")
-
-[node name="Sprites" type="Node2D" parent="Player" unique_id=1079554781]
-position = Vector2(124, 382)
-scale = Vector2(0.1, 0.1)
-
-[node name="BodyBase" type="Sprite2D" parent="Player/Sprites" unique_id=1704669743]
-position = Vector2(0, -1423.0771)
-texture = ExtResource("8_bch6i")
-
-[node name="Body" type="Sprite2D" parent="Player/Sprites" unique_id=1250008288]
-position = Vector2(0, -1423.0771)
-texture = ExtResource("9_q43bu")
-
-[node name="Weapon" type="Sprite2D" parent="Player/Sprites" unique_id=650747550]
-position = Vector2(740, -1570)
-scale = Vector2(0.9999998, 0.9999998)
-texture = ExtResource("10_q43bu")
-
-[node name="ArmBase" type="Sprite2D" parent="Player/Sprites" unique_id=1572091967]
-position = Vector2(0, -1423.0771)
-texture = ExtResource("10_11mmy")
-
-[node name="Arm" type="Sprite2D" parent="Player/Sprites" unique_id=160970446]
-position = Vector2(0, -1423.0771)
-texture = ExtResource("11_ev1ic")
-
-[node name="temp ui crap" type="Node2D" parent="Player" unique_id=1121422194]
-position = Vector2(52, 3)
-
-[node name="ArmorPrev" type="Button" parent="Player/temp ui crap" unique_id=2141810937]
-offset_left = 9.0
-offset_top = 37.0
-offset_right = 52.0
-offset_bottom = 68.0
-text = "prev"
-
-[node name="ArmorNext" type="Button" parent="Player/temp ui crap" unique_id=572126135]
-offset_left = 136.0
-offset_top = 41.0
-offset_right = 179.0
-offset_bottom = 72.0
-text = "next"
-
-[node name="tempspritetest" type="Label" parent="Player/temp ui crap" unique_id=1150455379]
-offset_left = 33.0
-offset_top = 10.0
-offset_right = 161.0
-offset_bottom = 33.0
-text = "temp sprite test "
-
-[node name="Armor" type="Label" parent="Player/temp ui crap" unique_id=1117425839]
-offset_left = 66.0
-offset_top = 41.0
-offset_right = 116.0
-offset_bottom = 64.0
-text = "Armor"
-
-[node name="WeapNext" type="Button" parent="Player/temp ui crap" unique_id=955874421]
-offset_left = 136.0
-offset_top = 80.0
-offset_right = 179.0
-offset_bottom = 111.0
-text = "next
-"
-
-[node name="WeapPrev" type="Button" parent="Player/temp ui crap" unique_id=575422592]
-offset_left = 12.0
-offset_top = 76.0
-offset_right = 55.0
-offset_bottom = 107.0
-text = "prev"
-
-[node name="Weap" type="Label" parent="Player/temp ui crap" unique_id=1800796030]
-offset_left = 64.0
-offset_top = 79.0
-offset_right = 128.0
-offset_bottom = 102.0
-text = "Weapon"
-
-[node name="GS" type="Button" parent="Player/temp ui crap" unique_id=821775531]
-offset_left = -42.0
-offset_top = 22.0
-offset_right = -13.0
-offset_bottom = 53.0
-text = "GS"
-
-[node name="IG" type="Button" parent="Player/temp ui crap" unique_id=1828927720]
-offset_left = -42.0
-offset_top = 60.0
-offset_right = -17.0
-offset_bottom = 91.0
-text = "IG"
-
-[node name="idle" type="Button" parent="Player/temp ui crap" unique_id=82919590]
-offset_left = -37.0
-offset_top = 126.0
-offset_bottom = 157.0
-text = "idle
-"
-
-[node name="attack" type="Button" parent="Player/temp ui crap" unique_id=1954119967]
-offset_left = -39.0
-offset_top = 164.0
-offset_right = 18.0
-offset_bottom = 195.0
-text = "attack"
-
-[node name="owie" type="Button" parent="Player/temp ui crap" unique_id=692081431]
-offset_left = -40.0
-offset_top = 200.0
-offset_right = 17.0
-offset_bottom = 231.0
-text = "owie"
-
-[connection signal="button_up" from="BattleUI/Lose" to="BattleUI/Lose" method="_on_button_up"]
-[connection signal="button_up" from="Player/temp ui crap/ArmorPrev" to="Player" method="_on_armor_prev_button_up"]
-[connection signal="button_up" from="Player/temp ui crap/ArmorNext" to="Player" method="_on_armor_next_button_up"]
-[connection signal="button_up" from="Player/temp ui crap/WeapNext" to="Player" method="_on_weap_next_button_up"]
-[connection signal="button_up" from="Player/temp ui crap/WeapPrev" to="Player" method="_on_weap_prev_button_up"]
-[connection signal="button_up" from="Player/temp ui crap/GS" to="Player" method="_on_gs_button_up"]
-[connection signal="button_up" from="Player/temp ui crap/IG" to="Player" method="_on_ig_button_up"]
-[connection signal="button_up" from="Player/temp ui crap/idle" to="Player" method="_on_idle_button_up"]
-[connection signal="button_up" from="Player/temp ui crap/attack" to="Player" method="_on_attack_button_up"]
-[connection signal="button_up" from="Player/temp ui crap/owie" to="Player" method="_on_owie_button_up"]
-=======
 [node name="EndPhase" type="Button" parent="BattleUI" unique_id=2078705294]
 offset_left = 995.0
 offset_top = 494.0
@@ -235,4 +99,3 @@ text = "End Phase"
 
 [connection signal="button_up" from="BattleUI/Lose" to="BattleUI/Lose" method="_on_button_up"]
 [connection signal="button_up" from="BattleUI/EndPhase" to="." method="_on_end_phase_button_up"]
->>>>>>> Stashed changes
