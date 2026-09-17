@@ -3,21 +3,36 @@
 [ext_resource type="Script" uid="uid://m2ykwdffvmfy" path="res://Scripts/Battle/battle.gd" id="1_o8bsx"]
 [ext_resource type="Script" uid="uid://d1nhtnr2sf7ti" path="res://Scripts/ButtonScripts/win.gd" id="1_oxf17"]
 [ext_resource type="Script" uid="uid://u1tokpl701d2" path="res://Scripts/ButtonScripts/lose.gd" id="2_1ruyk"]
+[ext_resource type="Script" uid="uid://dj2mu1pscioy7" path="res://Custom Resources/player_battle_stats.gd" id="2_17ekq"]
+[ext_resource type="Script" uid="uid://82trj2sew3ve" path="res://Custom Resources/item.gd" id="2_bch6i"]
 [ext_resource type="Texture2D" uid="uid://dkql83hfex3wj" path="res://art_temp/Placeholders/Background_temp.webp" id="3_aqr0y"]
 [ext_resource type="Script" uid="uid://w5878a470mqn" path="res://Scenes/UI/hand.gd" id="3_j1k4e"]
+[ext_resource type="Script" uid="uid://b1s7a2jmggd5l" path="res://Custom Resources/playerstats.gd" id="3_q43bu"]
 [ext_resource type="PackedScene" uid="uid://bsw62q70e13bo" path="res://Scenes/card_ui/cardUI.tscn" id="4_wqxgi"]
 [ext_resource type="PackedScene" uid="uid://8vaps1iooecn" path="res://Scenes/Player/player.tscn" id="7_j1k4e"]
 [ext_resource type="PackedScene" uid="uid://bmvjmrotdsk0t" path="res://Scenes/Monsters/monsters.tscn" id="8_17ekq"]
 
+[sub_resource type="Resource" id="Resource_11mmy"]
+script = ExtResource("3_q43bu")
+metadata/_custom_type_script = "uid://b1s7a2jmggd5l"
+
+[sub_resource type="Resource" id="Resource_rgg0r"]
+script = ExtResource("2_17ekq")
+cards_per_turn = 3
+base_armor = 3
+metadata/_custom_type_script = "uid://dj2mu1pscioy7"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o8bsx"]
 size = Vector2(1152, 216)
 
-
-[node name="Battle" type="Node2D" unique_id=1994073809 node_paths=PackedStringArray("action_timer", "monsters, "end_phase_button")]
+[node name="Battle" type="Node2D" unique_id=1994073809 node_paths=PackedStringArray("action_timer", "monsters", "end_phase_button", "player")]
 script = ExtResource("1_o8bsx")
 action_timer = NodePath("ActionTimer")
 monsters = NodePath("Monsters")
 end_phase_button = NodePath("BattleUI/EndPhase")
+player = NodePath("Player")
+campaign_stats = SubResource("Resource_11mmy")
+player_stats = SubResource("Resource_rgg0r")
 
 [node name="ActionTimer" type="Timer" parent="." unique_id=1520356781]
 wait_time = 0.5
@@ -97,8 +112,6 @@ text = "End Phase"
 [node name="Player" parent="." unique_id=72994002 instance=ExtResource("7_j1k4e")]
 
 [node name="Monsters" parent="." unique_id=1011924438 instance=ExtResource("8_17ekq")]
-
-[node name="Monsters" type="Node2D" parent="." unique_id=1110794806]
 
 [connection signal="button_up" from="BattleUI/Lose" to="BattleUI/Lose" method="_on_button_up"]
 [connection signal="button_up" from="BattleUI/EndPhase" to="." method="_on_end_phase_button_up"]
