@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="PlayerBattleStats" format=3 uid="uid://j8v1s8vgqb78"]
 
 [ext_resource type="Script" uid="uid://dj2mu1pscioy7" path="res://Custom Resources/player_battle_stats.gd" id="1_a7s38"]
-[ext_resource type="Resource" uid="uid://dofekc0gylnln" path="res://Scenes/Player/starter_deck.tres" id="2_e1vfb"]
+[ext_resource type="Resource" uid="uid://dofekc0gylnln" path="res://CharacterStats/Player/starter_deck.tres" id="2_a7s38"]
 
 [resource]
 script = ExtResource("1_a7s38")
-starting_deck = ExtResource("2_e1vfb")
+starting_deck = ExtResource("2_a7s38")
 cards_per_turn = 7
 max_health = 100
 base_armor = 2

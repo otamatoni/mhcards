@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="CardPile" format=3 uid="uid://dofekc0gylnln"]
+
+[ext_resource type="Script" uid="uid://cyighhioenfab" path="res://Custom Resources/card.gd" id="1_q5ggm"]
+[ext_resource type="Script" uid="uid://c8bfpiiqgod04" path="res://Custom Resources/card_pile.gd" id="2_kh7ow"]
+
+[sub_resource type="Resource" id="Resource_3unv4"]
+script = ExtResource("1_q5ggm")
+metadata/_custom_type_script = "uid://cyighhioenfab"
+
+[sub_resource type="Resource" id="Resource_sjep3"]
+script = ExtResource("1_q5ggm")
+metadata/_custom_type_script = "uid://cyighhioenfab"
+
+[sub_resource type="Resource" id="Resource_osao3"]
+script = ExtResource("1_q5ggm")
+metadata/_custom_type_script = "uid://cyighhioenfab"
+
+[sub_resource type="Resource" id="Resource_r4eks"]
+script = ExtResource("1_q5ggm")
+metadata/_custom_type_script = "uid://cyighhioenfab"
+
+[sub_resource type="Resource" id="Resource_v8ulg"]
+script = ExtResource("1_q5ggm")
+metadata/_custom_type_script = "uid://cyighhioenfab"
+
+[resource]
+script = ExtResource("2_kh7ow")
+cards = Array[ExtResource("1_q5ggm")]([SubResource("Resource_3unv4"), SubResource("Resource_sjep3"), SubResource("Resource_osao3"), SubResource("Resource_r4eks"), SubResource("Resource_v8ulg")])
+metadata/_custom_type_script = "uid://c8bfpiiqgod04"

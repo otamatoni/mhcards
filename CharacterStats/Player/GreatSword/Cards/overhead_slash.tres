@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Card" format=3 uid="uid://8jbbigxhubab"]
+
+[ext_resource type="Script" uid="uid://cyighhioenfab" path="res://Custom Resources/card.gd" id="1_m3i3q"]
+
+[resource]
+script = ExtResource("1_m3i3q")
+id = "overhead_slash"
+metadata/_custom_type_script = "uid://cyighhioenfab"
